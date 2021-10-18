@@ -5,7 +5,7 @@ import Bug from '../models/bugModel.js';
 const bugRouter = express.Router();
 // GET BUG
 bugRouter.get(
-  '/:id',
+  '/',
   expressAsyncHandler(async (req, res) => {
     const bugs = await Bug.find({});
     res.send(bugs);
