@@ -1,7 +1,25 @@
 .content-container {
-  display: flex;
-  flex-direction: column;
+  max-height: 90vh;
   width: 100%;
   padding: 2rem;
   background-color: rgb(224, 224, 228);
+}
+
+/* Content Grid */
+.content-grid {
+  max-height: 90vh;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.bargraph-container {
+  width: 100%;
+  height: auto;
+}
+
+.piechart-container {
+  width: 20rem;
+  height: auto;
 }

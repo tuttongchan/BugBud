@@ -20,22 +20,9 @@ const LoginScreen = () => {
   const history = useHistory();
   useEffect(() => {
     if (userInfo) {
-      history.push('/')
-      // window.location.replace('/');
+      history.push('/');
     }
   }, [userInfo, history]);
-
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     window.location.replace('/');
-  //   }
-  // }, [userInfo]);
-
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     props.history.push(redirect);
-  //   }
-  // }, [props.history, redirect, userInfo]);
 
   return (
     <div className="loginscreen-container">

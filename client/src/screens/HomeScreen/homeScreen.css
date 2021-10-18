@@ -1,5 +1,11 @@
+.homescreen-container {
+  height: 100vh;
+  /* width: auto; */
+}
+
 .bottom-container {
+  max-height: 90vh;
+  /* height: 90vh; */
+  /* width: 100%; */
   display: flex;
-  width: 100%;
-  height: 100%;
 }
