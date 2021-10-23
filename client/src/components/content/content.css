@@ -1,6 +1,7 @@
 .content-container {
   width: 100%;
-  padding: 5rem;
+  height: 100%;
+  padding: 2rem 4rem;
   background-color: rgb(224, 224, 228);
 }
 
@@ -31,19 +32,65 @@
 }
 
 /* Notification */
-.notification-grid{
+.notification-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 1rem;
 }
 
-.notification-container {
+.notification-container:nth-child(1) {
   width: 100%;
   display: flex;
   align-items: center;
   padding: 1rem;
-  background-color: mediumspringgreen;
+  background-color: rgb(255, 244, 234);
+  border-radius: 5px;
+}
+
+.notification-container:nth-child(2) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgb(234, 255, 235);
+  border-radius: 5px;
+}
+
+.notification-container:nth-child(3) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgb(234,239,255);
+  border-radius: 5px;
+}
+
+.notification-container:nth-child(4) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgb(243,239,254);
+  border-radius: 5px;
+}
+
+.notification-container:nth-child(5) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgb(238,236,254);
+  border-radius: 5px;
+}
+
+.notification-container:nth-child(6) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgb(254,239,245);
+  border-radius: 5px;
 }
 
 .notification-left-container {
@@ -60,7 +107,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: lightsalmon;
 }
 
 .notification-right-spans-container {
@@ -68,6 +114,24 @@
   flex-direction: column;
 }
 
+.notification-span-blue {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgb(161, 156, 251);
+}
+
+.notification-span-red {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgb(247, 98, 128);
+}
+
+.notification-span-black {
+  color: #000;
+  font-weight: 900;
+}
+
 .notification-arrow-container {
   font-size: 2rem;
+  /* font-weight: 400; */
 }
