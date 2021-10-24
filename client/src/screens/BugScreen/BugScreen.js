@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import './homeScreen.css';
+import React, { useEffect } from 'react';
+import './bugScreen.css';
 import { useSelector } from 'react-redux';
 import Topbar from '../../components/topbar/Topbar';
 import Dashboard from '../../components/dashboard/Dashboard';
 import { useHistory } from 'react-router';
-import TabHome from '../../components/tabHome/TabHome';
+import TabBugs from '../../components/tabBugs/TabBugs';
 
-const HomeScreen = () => {
+const BugScreen = () => {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
@@ -35,18 +35,18 @@ const HomeScreen = () => {
   }, [userInfo, history]);
 
   return (
-    <div className="homescreen-container">
+    <div className="bugscreen-container">
       <Topbar />
       <div className="bottom-container">
         {/* <Dashboard setTab={setTab} /> */}
         {/* {content} */}
 
         <Dashboard />
-        <TabHome />
+        <TabBugs />
         {/* <Content /> */}
       </div>
     </div>
   );
 };
 
-export default HomeScreen;
+export default BugScreen;

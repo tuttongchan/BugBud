@@ -33,6 +33,7 @@ bugRouter.put(
       bug.type = req.body.type;
       bug.desc = req.body.desc;
       bug.links = req.body.links;
+      bug.code = req.body.code
       const updatedBug = await bug.save();
       res.send(updatedBug);
     } else {

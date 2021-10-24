@@ -9,7 +9,7 @@ const LoginScreen = () => {
   const [password, setPassword] = useState('');
 
   const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo, loading, error } = userSignin;
+  const { userInfo, error } = userSignin;
 
   const dispatch = useDispatch();
   const submitHandler = (e) => {

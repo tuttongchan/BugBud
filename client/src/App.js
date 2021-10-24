@@ -1,14 +1,12 @@
 import './index.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import LoginScreen from './screens/LoginScreen/LoginScreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
-import Content from './components/content/Content';
+import BugScreen from './screens/BugScreen/BugScreen'
 
 function App() {
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo } = userSignin;
-  console.log(userInfo);
+  // const userSignin = useSelector((state) => state.userSignin);
+  // const { userInfo } = userSignin;
 
   return (
     <div>
@@ -19,7 +17,8 @@ function App() {
           {/* <Route path="/register" component={RegisterScreen} exact></Route> */}
 
 
-          <Route path='/home' component={Content}></Route>
+          {/* <Route path='/home' component={Content}></Route> */}
+          <Route path='/bugs' component={BugScreen}></Route>
           
         </Switch>
       </BrowserRouter>

@@ -1,0 +1,10 @@
+.bugscreen-container {
+    height: 100vh;
+  }
+  
+  .bottom-container {
+    height: 90vh;
+    /* width: 100vw; */
+    display: flex;
+  }
+  

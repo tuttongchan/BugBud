@@ -53,7 +53,8 @@ const userList = () => {
   return (
     <div
       style={{
-        height: 400,
+        // height: 400,
+        height: '100%',
         width: '100%',
         backgroundColor: '#fff',
         borderRadius: '5px',

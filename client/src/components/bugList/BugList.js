@@ -1,49 +1,60 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import './buglist.css';
 import { DataGrid } from '@mui/x-data-grid';
+import { useDispatch, useSelector } from 'react-redux';
+import { detailsBug } from '../../actions/bugActions';
 
-const columns = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'firstName', headerName: 'First name', width: 130 },
-  { field: 'lastName', headerName: 'Last name', width: 130 },
-  {
-    field: 'age',
-    headerName: 'Age',
-    type: 'number',
-    width: 90,
-  },
-  {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.getValue(params.id, 'firstName') || ''} ${
-        params.getValue(params.id, 'lastName') || ''
-      }`,
-  },
-];
-
-const rows = [
-  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-  { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-];
 const BugList = () => {
+  const dispatch = useDispatch();
+  const allBugs = useSelector((state) => state.bugDetails.bugs || []);
+
+  useEffect(() => {
+    dispatch(detailsBug());
+  }, [dispatch]);
+
+  let rows = [];
+  rows = allBugs.map((bug, i) => {
+    return (rows = {
+      id: i + 1,
+      bugName: bug.bugName,
+      language: bug.language,
+      desc: bug.desc,
+      links: bug.links,
+      code: bug.code,
+    });
+  });
+
+  let columns = [
+    { field: 'id', headerName: 'ID', width: 100 },
+    { field: 'bugName', headerName: 'Bug Name', width: 250 },
+    {
+      field: 'action',
+      headerName: 'View, Edit, Delete',
+      width: 200,
+      renderCell: (params) => {
+        return (
+          <>
+            <i className="far fa-eye"></i>
+            <i className="fas fa-pencil-alt"></i>
+            <i className="far fa-trash-alt"></i>
+          </>
+        );
+      },
+    },
+    { field: 'language', headerName: 'Language', width: 200 },
+    { field: 'desc', headerName: 'Description', width: 200 },
+    { field: 'links', headerName: 'Links', width: 200 },
+    { field: 'code', headerName: 'Code Snippet', width: 400 },
+  ];
+
   return (
-    <div style={{ height: '100%', width: '100%' }}>
+    <div style={{ height: 400, width: '100%' }}>
       <DataGrid
         rows={rows}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
-        checkboxSelection
+        // checkboxSelection
       />
     </div>
   );
