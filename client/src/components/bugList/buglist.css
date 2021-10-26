@@ -24,3 +24,9 @@
 .fa-trash-alt {
   color: red;
 }
+
+/* Modal Container */
+.modal-container {
+  width: 25rem;
+  height: 30rem;
+}
