@@ -3,8 +3,9 @@
   height: 90vh;
   /* height: 100%; */
   padding: 2rem 4rem;
-  border-top: .1px solid gray;
-  background-color: #fff;
+  border-top: 0.1px solid gray;
+  /* background-color: #fff; */
+  background-color: rgb(196, 194, 194);
   overflow-y: scroll;
 }
 
@@ -12,3 +13,8 @@
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
+
+/* .tabbugs-bugs-container {
+  display: flex;
+  flex-wrap: wrap;
+} */

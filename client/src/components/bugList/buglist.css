@@ -1,8 +1,6 @@
-/* .edit-button {
-  padding: 0.1rem 0.3rem;
-  background-color: lightseagreen;
-  color: #fff;
-} */
+.buglist-container {
+  display: flex;
+}
 
 .fa-pencil-alt,
 .fa-trash-alt,
@@ -26,7 +24,12 @@
 }
 
 /* Modal Container */
-.modal-container {
+/* .modal-container {
   width: 25rem;
   height: 30rem;
+} */
+
+.bugitem-container {
+  display: flex;
+  flex-wrap: wrap;
 }

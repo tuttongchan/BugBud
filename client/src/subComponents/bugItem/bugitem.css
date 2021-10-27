@@ -1,0 +1,68 @@
+.bugitem-card {
+  padding: 1rem;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 5px;
+  margin-bottom: 3rem;
+  margin-right: 3rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  overflow-y: scroll;
+}
+
+.bugitem-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  border-bottom: 0.5px solid #000;
+  width: 100%;
+}
+
+.bugitem-language-heading {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.bugitem-language-span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.bugitem-desc-container {
+  margin-bottom: 0.6rem;
+}
+
+.bugitem-desc {
+  font-size: 0.85rem;
+}
+
+.bugitem-desc-span {
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.bugitem-links-container {
+  margin-bottom: 1rem;
+}
+
+.bugitem-links {
+  font-size: 0.85rem;
+}
+
+.bugitem-links-span {
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.bugitem-code-container {
+  padding: 0.6rem;
+  line-height: 2rem;
+  border-radius: 5px;
+  background-color: #000;
+  border: 0.5px solid #000;
+}
+
+.bugitem-code {
+  font-size: 0.8rem;
+  color: #fff;
+}

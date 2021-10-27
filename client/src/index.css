@@ -7,6 +7,9 @@
 body {
   background-color: lightblue;
   font-family: 'Poppins', sans-serif;
-  /* height: 100%; */
-  /* width: 100%; */
+}
+
+.bottom-container {
+  height: 90vh;
+  display: flex;
 }

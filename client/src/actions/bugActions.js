@@ -20,6 +20,7 @@ export const bugsDetails = () => async (dispatch) => {
     const { data } = await Axios.get('/api/bugs');
     dispatch({ type: BUGS_DETAILS_SUCCESS, payload: data });
   } catch (error) {
+    console.log(error.message)
     dispatch({
       type: BUGS_DETAILS_FAIL,
       payload:

@@ -10,25 +10,8 @@ const BugScreen = () => {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
-  const allBugs = useSelector((state) => state.bugsDetails.bugs || []);
-  console.log(allBugs)
-
-  // const [tab, setTab] = useState('Home');
-  // const [content, setContent] = useState();
-
-  // useEffect(() => {
-  //   switch (tab) {
-    //     case 'Home':
-    //       setContent(<TabHome />);
-  //       break;
-  //     case 'Bugs':
-  //       setContent(<TabBugs />);
-  //       console.log(content)
-  //       break;
-  //     default:
-  //       setContent(<div></div>);
-  //   }
-  // }, [tab]);
+  console.log(userSignin)
+  console.log(userInfo)
   
   let history = useHistory();
   useEffect(() => {
@@ -41,8 +24,6 @@ const BugScreen = () => {
     <div className="bugscreen-container">
       <Topbar />
       <div className="bottom-container">
-        {/* <Dashboard setTab={setTab} /> */}
-        {/* {content} */}
 
         <Dashboard />
         <TabBugs />
