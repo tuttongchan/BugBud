@@ -1,0 +1,51 @@
+.tabsinglebug-container {
+  width: 100%;
+  height: 90vh;
+  padding: 2rem 4rem;
+  border-top: 0.1px solid gray;
+  background-color: rgb(249, 249, 249);
+  overflow-y: scroll;
+}
+
+/* TabSingleBug Containers */
+.tabsinglebug-language-container,
+.tabsinglebug-desc-container,
+.tabsinglebug-links-container {
+ display: flex;
+}
+
+.tabsinglebug-name-container {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+
+.tabsinglebug-code-container {
+  display: flex;
+  background-color: #000;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 50rem;
+}
+
+/* Heading and Paragraphs */
+.tabsinglebug-desc-heading,
+.tabsinglebug-language-heading,
+.tabsinglebug-links-heading {
+  width: 7rem;
+  margin-bottom: 1rem;
+}
+
+.tabsinglebug-desc,
+.tabsinglebug-language,
+.tabsinglebug-links{
+  font-weight: 400;
+}
+
+.tabsinglebug-code-heading {
+  margin-bottom: .7rem;
+}
+
+.tabsinglebug-code-container p {
+  color: #fff;
+}

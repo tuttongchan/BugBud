@@ -1,22 +1,19 @@
 .tabhome-container {
   width: 100%;
   height: 90vh;
-  /* height: 100%; */
   padding: 1.7rem 4rem;
-  border-top: .1px solid gray;
-  /* background-color: rgb(224, 224, 228); */
-  background-color: #fff;
+  border-top: 0.1px solid gray;
+  background-color: rgb(235, 235, 235);
   overflow-y: scroll;
 }
 
 /* Content Grid */
 .content-grid {
-  /* width: 100%; */
   display: grid;
-  grid-template-columns: auto auto;
-  /* grid-template-columns: 1fr 1fr; */
-  /* grid-template-rows: 1fr 1fr; */
-  grid-template-rows: auto auto;
+  /* grid-template-columns: auto auto; */
+  /* grid-template-rows: auto auto; */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 1rem;
 }
 

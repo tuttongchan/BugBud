@@ -13,3 +13,7 @@ body {
   height: 90vh;
   display: flex;
 }
+
+.black {
+  color: #000;
+}

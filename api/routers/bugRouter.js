@@ -7,22 +7,18 @@ const bugRouter = express.Router();
 bugRouter.get(
   '/',
   expressAsyncHandler(async (req, res) => {
-    try {
-      const bugs = await Bug.find({});
-      res.send(bugs);
-    } catch (err) {
-      res.status(500).json(err);
-    }
+    const bugs = await Bug.find({});
+    res.send(bugs);
   })
 );
 
 // GET BUG
 bugRouter.get('/:id', async (req, res) => {
-  try {
-    const bug = await Bug.findById(req.params.id);
+  const bug = await Bug.findById(req.params.id);
+  if (bug) {
     res.status(200).json(bug);
-  } catch (err) {
-    res.status(500).json(err);
+  } else {
+    res.status(404).send({ message: 'Bug Not Found' });
   }
 });
 
@@ -31,12 +27,8 @@ bugRouter.post(
   '/',
   expressAsyncHandler(async (req, res) => {
     const bug = await Bug(req.body);
-    try {
     const createdBug = await bug.save();
     res.status.send(createdBug);
-    } catch (err) {
-    res.status(500).json(err);
-    }
   })
 );
 
@@ -53,9 +45,9 @@ bugRouter.put(
       bug.links = req.body.links;
       bug.code = req.body.code;
       const updatedBug = await bug.save();
-      res.send(updatedBug);
+      res.send({ message: 'Bug Updated', product: updatedBug });
     } else {
-      res.status(404).send('Product Not Found');
+      res.status(404).send({ message: 'Product Not Found' });
     }
   })
 );
@@ -67,7 +59,7 @@ bugRouter.delete(
     const bug = await Bug.findById(req.params.id);
     if (bug) {
       await bug.delete();
-      res.send('Post has been deleted!');
+      res.send({ message: 'Bug has been deleted!' });
     }
   })
 );

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './tabhome.css';
 import PieChart from '../pieChart/PieChart';
 import BarGraph from '../barGraph/BarGraph';
 // import { useSelector, useDispatch } from 'react-redux';
 // import { detailsBug } from '../../actions/bugActions';
 import UserList from '../userList/UserList';
+import { useDispatch, useSelector } from 'react-redux';
+import { bugsDetails } from '../../actions/bugActions';
 // import { bugDetails } from './actions/bugActions';
 
 const TabHome = () => {
@@ -128,16 +130,12 @@ const TabHome = () => {
           <div style={{ padding: '1rem .5rem 0 .5rem' }}>
             <h1>Total Bugs</h1>
           </div>
-          <div className="piechart-container">
+          <div className="piechart-container" style={{ padding: '0 0 1rem 0' }}>
             <PieChart />
           </div>
         </div>
         <div>
           <UserList />
-
-          {/* <PieChart /> */}
-
-          {/* <BarGraph /> */}
 
           {/* {loading ? (
             <h1>Loading...</h1>

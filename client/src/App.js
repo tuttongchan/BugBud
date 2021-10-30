@@ -2,7 +2,8 @@ import './index.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import LoginScreen from './screens/LoginScreen/LoginScreen';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
-import BugScreen from './screens/BugScreen/BugScreen'
+import BugsScreen from './screens/BugsScreen/BugsScreen'
+import SingleBugScreen from './screens/SingleBugScreen/SingleBugScreen';
 
 function App() {
   // const userSignin = useSelector((state) => state.userSignin);
@@ -17,8 +18,8 @@ function App() {
           {/* <Route path="/register" component={RegisterScreen} exact></Route> */}
 
 
-          {/* <Route path='/home' component={Content}></Route> */}
-          <Route path='/bugs' component={BugScreen}></Route>
+          <Route path='/bugs' component={BugsScreen} exact></Route>
+          <Route path='/bug/:id' component={SingleBugScreen} exact></Route>
           
         </Switch>
       </BrowserRouter>

@@ -25,9 +25,7 @@ const BugList = () => {
   const allBugs = useSelector((state) => state.bugsDetails);
   const { loading, error, bugs } = allBugs;
 
-  // console.log(allBugs);
-  // const { bugs } = allBugs;
-  // console.log(bugs)
+  console.log(allBugs);
 
   useEffect(() => {
     dispatch(bugsDetails());
@@ -45,10 +43,12 @@ const BugList = () => {
   //   });
   // });
 
-  const createBugHandler = (e) => {
-    e.preventDefault();
-    dispatch(createBug(bugName, language, desc, links, code));
-  };
+  // console.log(rows)
+
+  // const createBugHandler = (e) => {
+  //   e.preventDefault();
+  //   dispatch(createBug(bugName, language, desc, links, code));
+  // };
 
   return (
     <div className="buglist-container">

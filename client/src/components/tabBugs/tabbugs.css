@@ -1,12 +1,69 @@
 .tabbugs-container {
   width: 100%;
   height: 90vh;
-  /* height: 100%; */
   padding: 2rem 4rem;
   border-top: 0.1px solid gray;
-  /* background-color: #fff; */
-  background-color: rgb(196, 194, 194);
+  background-color: rgb(249, 249, 249);
   overflow-y: scroll;
+}
+
+.tabbugs-top-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tabbugs-top-right-container {
+  display: flex;
+  align-items: center;
+}
+
+.tabbugs-input {
+  font-family: 'Poppins', sans-serif;
+  padding: 0.2rem 1rem;
+  height: 2.3rem;
+  width: 17rem;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 2px solid #000;
+}
+
+.tabbugs-input:focus {
+  outline: none;
+}
+
+.fa-search {
+  margin-right: 0.2rem;
+  color: #fff;
+}
+
+.search-button {
+  display: flex;
+  align-items: center;
+  background-color: rgb(144, 144, 226);
+  border: 1px solid rgb(144, 144, 226);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 0.59rem 0.6rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.fa-plus {
+  margin-right: 0.3rem;
+}
+
+.addbug-button {
+  border: 1px solid #000;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.addbug-button:hover {
+  background: #000;
+  color: #fff;
 }
 
 .tabbugs-heading {
@@ -14,7 +71,56 @@
   margin-bottom: 1rem;
 }
 
-/* .tabbugs-bugs-container {
+/* Modals */
+.modal-container {
+  width: 35rem;
+  height: 37rem;
+  padding: 2rem;
+}
+
+.modal-bugname-container,
+.modal-language-container,
+.modal-desc-container,
+.modal-links-container {
   display: flex;
-  flex-wrap: wrap;
-} */
+  margin-bottom: 1rem;
+}
+
+.modal-bugname-heading,
+.modal-language-heading,
+.modal-desc-heading,
+.modal-links-heading {
+  width: 10rem;
+}
+
+.modal-code-heading {
+  margin-bottom: 0.8rem;
+}
+
+.modal-code-textarea {
+  font-family: 'Poppins', sans-serif;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+  overflow-y: scroll;
+}
+
+.modal-submit-button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  padding: 0.6rem 2.5rem;
+  color: #fff;
+  background-color: cornflowerblue;
+  border: 1px solid cornflowerblue;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.modal-submit-button:hover {
+  background-color: #fff;
+  color: cornflowerblue;
+  border: 1px solid cornflowerblue;
+}

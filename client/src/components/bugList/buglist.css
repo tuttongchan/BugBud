@@ -2,6 +2,18 @@
   display: flex;
 }
 
+.buglist-addbug-container {
+  padding: 1rem;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 5px;
+  margin-bottom: 3rem;
+  margin-right: 3rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  overflow-y: scroll;
+}
+
 .fa-pencil-alt,
 .fa-trash-alt,
 .fa-eye {
