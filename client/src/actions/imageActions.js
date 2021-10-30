@@ -45,37 +45,36 @@ export const imageDetails = (imageId) => async (dispatch) => {
   }
 };
 
-export const createImage =
-  (imageName, desc, image) => async (dispatch) => {
-    dispatch({ type: IMAGE_CREATE_REQUEST });
-    try {
-      const { data } = await Axios.post('/api/images', {
-        imageName,
-        desc,
-        image
-      });
-      dispatch({ type: IMAGE_CREATE_SUCCESS, payload: data.image });
-    } catch (error) {
-      dispatch({
-        type: IMAGE_CREATE_FAIL,
-        payload:
-          error.response && error.response.data.message
-            ? error.response.data.message
-            : error.message,
-      });
-    }
-  };
-
-  export const deleteImage = (imageId) => async (dispatch) => {
-    dispatch({ type: IMAGE_DELETE_REQUEST, payload: imageId });
-    try {
-      const { data } = Axios.delete(`/api/images/${imageId}`);
-      dispatch({ type: IMAGE_DELETE_SUCCESS, payload: data });
-    } catch (error) {
-      const message =
+export const createImage = (imageName, desc, image) => async (dispatch) => {
+  dispatch({ type: IMAGE_CREATE_REQUEST });
+  try {
+    const { data } = await Axios.post('/api/images', {
+      imageName,
+      desc,
+      image,
+    });
+    dispatch({ type: IMAGE_CREATE_SUCCESS, payload: data.image });
+  } catch (error) {
+    dispatch({
+      type: IMAGE_CREATE_FAIL,
+      payload:
         error.response && error.response.data.message
           ? error.response.data.message
-          : error.message;
-      dispatch({ type: IMAGE_DELETE_FAIL, error: message });
-    }
-  };
+          : error.message,
+    });
+  }
+};
+
+export const deleteImage = (imageId) => async (dispatch) => {
+  dispatch({ type: IMAGE_DELETE_REQUEST, payload: imageId });
+  try {
+    const { data } = Axios.delete(`/api/images/${imageId}`);
+    dispatch({ type: IMAGE_DELETE_SUCCESS, payload: data });
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({ type: IMAGE_DELETE_FAIL, error: message });
+  }
+};

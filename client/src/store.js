@@ -34,8 +34,8 @@ const reducer = combineReducers({
   bugsDetails: bugsDetailsReducer,
   bugDetails: bugDetailsReducer,
   bugCreate: bugCreateReducer,
-  imagesDetails: imageDetailsReducer,
-  imageDetails: imagesDetailsReducer,
+  imagesDetails: imagesDetailsReducer,
+  imageDetails: imageDetailsReducer,
   imageCreate: imageCreateReducer,
   imageDelete: imageDeleteReducer
 });

@@ -29,12 +29,12 @@ const TabSingleBug = ({ productId }) => {
             <h1>{bug.bugName}</h1>
           </div>
           <div className="tabsinglebug-language-container">
-            <h4 className='tabsinglebug-language-heading'>Tech💻:</h4>
-            <h4 className='tabsinglebug-language'>{bug.language}</h4>
+            <h4 className="tabsinglebug-language-heading">Tech💻:</h4>
+            <h4 className="tabsinglebug-language">{bug.language}</h4>
           </div>
           <div className="tabsinglebug-desc-container">
-            <h4 className='tabsinglebug-desc-heading'>Info📚:</h4>
-            <h4 className='tabsinglebug-desc'>{bug.desc}</h4>
+            <h4 className="tabsinglebug-desc-heading">Info📚:</h4>
+            <h4 className="tabsinglebug-desc">{bug.desc}</h4>
           </div>
           <div className="tabsinglebug-links-container">
             <h4 className="tabsinglebug-links-heading">Links🔗: </h4>
