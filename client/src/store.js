@@ -1,6 +1,16 @@
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import { bugCreateReducer, bugDetailsReducer, bugsDetailsReducer } from './reducers/bugReducer';
+import {
+  bugCreateReducer,
+  bugDetailsReducer,
+  bugsDetailsReducer,
+} from './reducers/bugReducer';
+import {
+  imagesDetailsReducer,
+  imageDetailsReducer,
+  imageDeleteReducer,
+  imageCreateReducer,
+} from './reducers/imageReducer';
 import {
   userDetailsReducer,
   userRegisterReducer,
@@ -24,6 +34,10 @@ const reducer = combineReducers({
   bugsDetails: bugsDetailsReducer,
   bugDetails: bugDetailsReducer,
   bugCreate: bugCreateReducer,
+  imagesDetails: imageDetailsReducer,
+  imageDetails: imagesDetailsReducer,
+  imageCreate: imageCreateReducer,
+  imageDelete: imageDeleteReducer
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -1,6 +1,6 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
-import Image from '../models/imageModel';
+import Image from '../models/imageModel.js'
 const imageRouter = express.Router();
 
 // GET ALL IMAGES
@@ -18,7 +18,7 @@ imageRouter.get('/:id', async (req, res) => {
   if (image) {
     res.status(200).json(image);
   } else {
-    res.status(404).send({ message: 'Bug Not Found' });
+    res.status(404).send({ message: 'Image Not Found' });
   }
 });
 
@@ -28,7 +28,7 @@ imageRouter.post(
   expressAsyncHandler(async (req, res) => {
     const image = await Image(req.body);
     const createdImage = await image.save();
-    res.status.send(createdImage);
+    res.status(200).send(createdImage);
   })
 );
 
@@ -39,7 +39,7 @@ imageRouter.put(
     const imageId = req.params.id;
     const image = await Image.findById(imageId);
     if (image) {
-      image.bugName = req.body.bugName;
+      image.imageName = req.body.imageName;
       image.desc = req.body.desc;
       image.image = req.body.image;
       const updatedImage = await image.save();

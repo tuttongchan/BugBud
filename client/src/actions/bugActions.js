@@ -68,10 +68,10 @@ export const createBug =
     }
   };
 
-export const deleteProduct = (productId) => async (dispatch) => {
-  dispatch({ type: BUG_DELETE_REQUEST, payload: productId });
+export const deleteBug = (bugId) => async (dispatch) => {
+  dispatch({ type: BUG_DELETE_REQUEST, payload: bugId });
   try {
-    const { data } = Axios.delete(`/api/products/${productId}`);
+    const { data } = Axios.delete(`/api/products/${bugId}`);
     dispatch({ type: BUG_DELETE_SUCCESS, payload: data });
   } catch (error) {
     const message =

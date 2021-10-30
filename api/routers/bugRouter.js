@@ -28,7 +28,7 @@ bugRouter.post(
   expressAsyncHandler(async (req, res) => {
     const bug = await Bug(req.body);
     const createdBug = await bug.save();
-    res.status.send(createdBug);
+    res.status(200).send(createdBug);
   })
 );
 
