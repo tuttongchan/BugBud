@@ -1,31 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './buglist.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { bugDetails, bugsDetails, createBug } from '../../actions/bugActions';
+import { bugsDetails } from '../../actions/bugActions';
 import LoadingBox from '../../subComponents/loadingBox/LoadingBox';
 import BugItem from '../../subComponents/bugItem/BugItem';
 
 const BugList = () => {
-  const [bugName, setBugName] = useState('');
-  const [language, setLanguage] = useState('');
-  const [desc, setDesc] = useState('');
-  const [links, setLinks] = useState('');
-  const [code, setCode] = useState('');
-
-  // const dispatch = useDispatch();
-  // const allBugs = useSelector((state) => state.bugDetails);
-  // const { loading, error, bugs } = allBugs;
-  // console.log(bugs);
-
-  // useEffect(() => {
-  //   dispatch(bugsDetails());
-  // }, [dispatch]);
-
   const dispatch = useDispatch();
   const allBugs = useSelector((state) => state.bugsDetails);
   const { loading, error, bugs } = allBugs;
 
   console.log(allBugs);
+  console.log(bugs);
 
   useEffect(() => {
     dispatch(bugsDetails());
@@ -42,7 +28,6 @@ const BugList = () => {
   //     code: bug.code,
   //   });
   // });
-
   // console.log(rows)
 
   // const createBugHandler = (e) => {
@@ -57,7 +42,7 @@ const BugList = () => {
       ) : error ? (
         <></>
       ) : (
-        <div className='bugitem-container'>
+        <div className="bugitem-container">
           {bugs.map((bug) => (
             <BugItem key={bug._id} bug={bug} />
           ))}

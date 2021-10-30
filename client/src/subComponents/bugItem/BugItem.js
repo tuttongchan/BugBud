@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './bugitem.css';
 
 const BugItem = ({ bug }) => {
-  console.log(bug._id);
+  // console.log(bug._id);
 
   return (
     <Link to={`/bug/${bug._id}`} style={{ textDecoration: 'none', color: '#000' }}>

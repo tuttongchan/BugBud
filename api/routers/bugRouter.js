@@ -1,8 +1,8 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import Bug from '../models/bugModel.js';
-
 const bugRouter = express.Router();
+
 // GET ALL BUGS
 bugRouter.get(
   '/',

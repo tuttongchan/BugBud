@@ -9,9 +9,6 @@ import TabBugs from '../../components/tabBugs/TabBugs';
 const BugsScreen = () => {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
-
-  // console.log(userSignin)
-  // console.log(userInfo)
   
   let history = useHistory();
   useEffect(() => {

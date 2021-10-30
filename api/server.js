@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRouter from './routers/userRouter.js';
 import bugRouter from './routers/bugRouter.js';
+import imageRouter from './routers/imageRouter.js';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ mongoose
 
 app.use('/api/users', userRouter);
 app.use('/api/bugs', bugRouter);
+app.use('/api/images', imageRouter)
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
