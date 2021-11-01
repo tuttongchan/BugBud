@@ -9,6 +9,7 @@ imageRouter.get(
   expressAsyncHandler(async (req, res) => {
     const images = await Image.find({});
     res.send(images);
+    // res.send(images.reverse());
   })
 );
 

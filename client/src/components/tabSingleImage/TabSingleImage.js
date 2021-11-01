@@ -25,8 +25,9 @@ const TabSingleImage = ({ imageId }) => {
         <></>
       ) : (
         <div>
-          <h1>{image.imageName}</h1>
-          <p>{image.desc}</p>
+          <h1 className='tabsingleimage-heading'>{image.imageName}</h1>
+          <p className='tabsingleimage-desc'>{image.desc}</p>
+          <img src={image.image} alt="" className='tabsingleimage-img' />
         </div>
       )}
     </div>

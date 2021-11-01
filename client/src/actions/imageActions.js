@@ -45,14 +45,16 @@ export const imageDetails = (imageId) => async (dispatch) => {
   }
 };
 
-export const createImage = (imageName, desc, image) => async (dispatch) => {
+// export const createImage = (imageName, desc, image) => async (dispatch) => {
+export const createImage = (imageForm) => async (dispatch) => {
   dispatch({ type: IMAGE_CREATE_REQUEST });
   try {
-    const { data } = await Axios.post('/api/images', {
-      imageName,
-      desc,
-      image,
-    });
+    // const { data } = await Axios.post('/api/images', {
+    //   imageName,
+    //   desc,
+    //   image,
+    // });
+    const { data } = await Axios.post('/api/images', imageForm);
     dispatch({ type: IMAGE_CREATE_SUCCESS, payload: data.image });
   } catch (error) {
     dispatch({

@@ -9,7 +9,7 @@ const ImageList = () => {
   const dispatch = useDispatch();
   const allImages = useSelector((state) => state.imagesDetails);
   const { loading, error, images } = allImages;
-  console.log(allImages);
+  // console.log(allImages);
 
   useEffect(() => {
     dispatch(imagesDetails());
