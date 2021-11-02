@@ -8,7 +8,7 @@ bugRouter.get(
   '/',
   expressAsyncHandler(async (req, res) => {
     const bugs = await Bug.find({});
-    res.send(bugs);
+    res.send(bugs.reverse());
   })
 );
 

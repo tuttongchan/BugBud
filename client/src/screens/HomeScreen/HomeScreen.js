@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './homeScreen.css';
 import { useSelector } from 'react-redux';
 import Topbar from '../../components/topbar/Topbar';

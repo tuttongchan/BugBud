@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './tabbugs.css';
 import BugList from '../bugList/BugList';
 import Modal from 'react-modal';
@@ -13,6 +13,8 @@ const TabBugs = () => {
   const [desc, setDesc] = useState('');
   const [links, setLinks] = useState('');
   const [code, setCode] = useState('');
+
+  console.log(language)
 
   const customStyles = {
     content: {
@@ -37,7 +39,7 @@ const TabBugs = () => {
   const createBugHandler = (e) => {
     e.preventDefault();
     dispatch(createBug(bugName, language, desc, links, code));
-    window.location.reload()
+    window.location.reload();
   };
 
   return (
@@ -74,10 +76,19 @@ const TabBugs = () => {
             </div>
             <div className="modal-language-container">
               <h4 className="modal-language-heading">Tech💻:</h4>
-              <input
+              <select onChange={(e) => setLanguage(e.target.value)}>
+                <option value="">Select :</option>
+                <option value="CSS">CSS</option>
+                <option value="Javascript">Javascript</option>
+                <option value="React.js">React.js</option>
+                <option value="Redux">Redux</option>
+                <option value="Express.js">Express.js</option>
+                <option value="MongoDB">MongoDB</option>
+              </select>
+              {/* <input
                 type="text"
                 onChange={(e) => setLanguage(e.target.value)}
-              />
+              /> */}
             </div>
             <div className="modal-desc-container">
               <h4 className="modal-desc-heading">Info📚:</h4>

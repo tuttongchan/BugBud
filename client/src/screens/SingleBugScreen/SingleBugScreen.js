@@ -6,7 +6,7 @@ import './singleBugScreen.css';
 
 const SingleBugScreen = (props) => {
   const productId = props.match.params.id;
-  console.log(productId);
+
   return (
     <div className="singlebugscreen-container">
       <Topbar />

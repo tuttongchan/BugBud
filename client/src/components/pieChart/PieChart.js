@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { useDispatch, useSelector } from 'react-redux';
 import { bugsDetails } from '../../actions/bugActions';
 
 const PieChart = () => {
+  const [bugCount, setBugCount] = useState([]);
+
+  const [reactCount, setReactCount] = useState(null);
+
   const dispatch = useDispatch();
   const allBugs = useSelector((state) => state.bugsDetails.bugs || []);
   const { loading, error } = allBugs;
@@ -13,32 +17,91 @@ const PieChart = () => {
     dispatch(bugsDetails());
   }, [dispatch]);
 
-  // const rows = [
-  //   { id: 1, age: 35 },
-  //   { id: 2, age: 42 },
-  //   { id: 3, age: 45 },
-  //   { id: 4, age: 16 },
-  //   { id: 5, age: null },
-  //   { id: 6, age: 150 },
-  //   { id: 7, age: 44 },
-  //   { id: 8, age: 36 },
-  //   { id: 9, age: 65 },
-  // ];
+  console.log(allBugs);
 
   let rows = [];
   rows = allBugs.map((bug, i) => {
     return (rows = {
       id: i + 1,
       bugName: bug.bugName,
+      language: bug.language,
     });
   });
 
+  // const sir = javascript.map((item) => {
+  //   return item.bugName;
+  // });
+  // console.log(sir);
+
+  const HTML = rows
+    .filter((row) => {
+      return row.language === 'HTML';
+    })
+    .map((item) => {
+      return item.language;
+    });
+  // console.log(HTML.length);
+
+  const CSS = rows
+    .filter((row) => {
+      return row.language === 'CSS';
+    })
+    .map((item) => {
+      return item.language;
+    });
+  // console.log(CSS.length);
+
+  const javascript = rows
+    .filter((row) => {
+      return row.language === 'Javascript';
+    })
+    .map((item) => {
+      return item.language;
+    });
+  // console.log(javascript.length);
+
+  const react = rows
+    .filter((row) => {
+      return row.language === 'React.js';
+    })
+    .map((item) => {
+      return item.language;
+    });
+  // console.log(react);
+
+  const redux = rows
+    .filter((row) => {
+      return row.language === 'Redux';
+    })
+    .map((item) => {
+      return item.language;
+    });
+  // console.log(redux);
+
+  const express = rows
+    .filter((row) => {
+      return row.language === 'Express.js';
+    })
+    .map((item) => {
+      return item.language;
+    });
+  // console.log(express);
+
+  const mongoDB = rows
+    .filter((row) => {
+      return row.language === 'MongoDB';
+    })
+    .map((item) => {
+      return item.language;
+    });
+  // console.log(mongoDB);
+
   const data = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ['Javascript', 'React.js', 'Redux', 'Express.js', 'MongoDB', 'CSS'],
     datasets: [
       {
         label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [javascript.length, react.length, redux.length, express.length, mongoDB.length, CSS.length],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -62,9 +125,6 @@ const PieChart = () => {
 
   return (
     <div>
-      <div>
-        <div></div>
-      </div>
       <Pie data={data} />
     </div>
   );

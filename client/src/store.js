@@ -2,6 +2,7 @@ import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import {
   bugCreateReducer,
+  bugDeleteReducer,
   bugDetailsReducer,
   bugsDetailsReducer,
 } from './reducers/bugReducer';
@@ -34,6 +35,7 @@ const reducer = combineReducers({
   bugsDetails: bugsDetailsReducer,
   bugDetails: bugDetailsReducer,
   bugCreate: bugCreateReducer,
+  bugDelete: bugDeleteReducer,
   imagesDetails: imagesDetailsReducer,
   imageDetails: imageDetailsReducer,
   imageCreate: imageCreateReducer,

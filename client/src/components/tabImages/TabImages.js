@@ -6,7 +6,6 @@ import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import storage from '../../firebase';
 import { useDispatch } from 'react-redux';
 import { createImage } from '../../actions/imageActions';
-import TextField from '@mui/material/TextField';
 
 const TabImages = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -108,7 +107,8 @@ const TabImages = () => {
               <img
                 className="writeImg"
                 src={URL.createObjectURL(image)}
-                alt="form image"
+                alt=''
+                // alt="form image"
               />
             )}
             <div className="writeFormGroup">

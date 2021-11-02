@@ -11,14 +11,32 @@
 .tabsinglebug-language-container,
 .tabsinglebug-desc-container,
 .tabsinglebug-links-container {
- display: flex;
+  display: flex;
 }
 
 .tabsinglebug-name-container {
   display: flex;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
+.tabsinglebug-name-container h1 {
+  margin-right: 1rem;
+}
+
+.fa-pen-to-square {
+  font-size: 1.3rem;
+  color: rgb(74, 74, 255);
+  margin-top: 0.4rem;
+  margin-right: 0.3rem;
+}
+
+.fa-trash-can {
+  font-size: 1.3rem;
+  color: red;
+  margin-top: 0.4rem;
+  margin-right: 0.6rem;
+}
 
 .tabsinglebug-code-container {
   display: flex;
@@ -38,14 +56,18 @@
 
 .tabsinglebug-desc,
 .tabsinglebug-language,
-.tabsinglebug-links{
+.tabsinglebug-links {
   font-weight: 400;
 }
 
 .tabsinglebug-code-heading {
-  margin-bottom: .7rem;
+  margin-bottom: 0.7rem;
 }
 
 .tabsinglebug-code-container p {
   color: #fff;
+}
+
+.fa-trash-can {
+  cursor: pointer;
 }

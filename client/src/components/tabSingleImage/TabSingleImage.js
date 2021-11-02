@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { imageDetails } from '../../actions/imageActions';
 import LoadingBox from '../../subComponents/loadingBox/LoadingBox';
 import './tabsingleimage.css';

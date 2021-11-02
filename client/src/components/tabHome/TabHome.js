@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 import './tabhome.css';
 import PieChart from '../pieChart/PieChart';
 import BarGraph from '../barGraph/BarGraph';
 // import { useSelector, useDispatch } from 'react-redux';
 // import { detailsBug } from '../../actions/bugActions';
 import UserList from '../userList/UserList';
-import { useDispatch, useSelector } from 'react-redux';
-import { bugsDetails } from '../../actions/bugActions';
-// import { bugDetails } from './actions/bugActions';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { bugsDetails } from '../../actions/bugActions';
 
 const TabHome = () => {
   // const dispatch = useDispatch();
@@ -154,10 +153,12 @@ const TabHome = () => {
           style={{ flexDirection: 'column' }}
         >
           <div style={{ padding: '1rem .5rem 0 .5rem' }}>
+          {/* <div> */}
             <h1>Bugs per Month</h1>
           </div>
           <div className="bargraph-container">
             <BarGraph />
+            {/* <PieChart /> */}
           </div>
         </div>
       </div>

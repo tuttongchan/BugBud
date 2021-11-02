@@ -6,9 +6,14 @@ const BugItem = ({ bug }) => {
   // console.log(bug._id);
 
   return (
-    <Link to={`/bug/${bug._id}`} style={{ textDecoration: 'none', color: '#000' }}>
+    <Link
+      to={`/bug/${bug._id}`}
+      style={{ textDecoration: 'none', color: '#000' }}
+    >
       <div className="bugitem-card">
-        <h3 className="bugitem-heading">{bug.bugName}</h3>
+        <div className="bugitem-heading-container">
+          <h3 className="bugitem-heading">{bug.bugName}</h3>
+        </div>
         <h5 className="bugitem-language-heading">
           Tech💻: <span className="bugitem-language-span">{bug.language}</span>
         </h5>
