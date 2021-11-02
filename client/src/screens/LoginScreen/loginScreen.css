@@ -1,15 +1,22 @@
 .loginscreen-container {
   height: 100vh;
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .login-container {
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
+  background-color: lightgoldenrodyellow;
   border: 1px solid #000;
   width: 300px;
-  height: 300px;
+  height: 350px;
+  border-radius: 5px;
 }
 
 .login-top-container {
@@ -17,7 +24,34 @@
   justify-content: center;
 }
 
+.login-top-container h1 {
+  margin-bottom: .6rem;
+  font-weight: 200;
+}
+
 .login-bottom-container {
   display: flex;
   flex-direction: column;
 }
+
+.login-bottom-container button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 100;
+  padding: 0.6rem 0;
+  border: 1px solid navy;
+  background-color: navy;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.login-bottom-container button:hover {
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+}
+
+
+/* -------------------- */

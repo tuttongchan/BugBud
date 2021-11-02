@@ -3,6 +3,7 @@ import './loginScreen.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { signin } from '../../actions/userActions';
+import TextField from '@mui/material/TextField';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -15,6 +16,11 @@ const LoginScreen = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(signin(email, password));
+  };
+
+  const guestHandler = (e) => {
+    e.preventDefault();
+    dispatch(signin('guest@example.com', '123'));
   };
 
   const history = useHistory();
@@ -30,24 +36,31 @@ const LoginScreen = () => {
         <div className="login-top-container">
           <h1>Login</h1>
         </div>
-        <form onSubmit={submitHandler}>
+        {/* <form onSubmit={submitHandler}> */}
+        <form>
           <div className="login-bottom-container">
-            <input
-              type="text"
-              required
+            <TextField
+              id="standard-basic"
+              label="Email"
+              style={{
+                marginBottom: '.9rem',
+                fontFamily: 'Poppins,sans-serif',
+              }}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <input
-              type="text"
-              required
+            <TextField
+              id="standard-basic"
+              label="Password"
+              style={{ marginBottom: '1rem' }}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit">
+            <button onClick={submitHandler} style={{ marginBottom: '.7rem' }}>
               Login
             </button>
+            <button onClick={guestHandler}>Guest</button>
           </div>
         </form>
-        {error ? <h1>{error}</h1> : null}
+        {/* {error ? <h1>{error}</h1> : null} */}
       </div>
     </div>
   );

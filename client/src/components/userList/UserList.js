@@ -30,6 +30,7 @@ const UserList = () => {
     return (rows = {
       id: i + 1,
       bugName: bug.bugName,
+      language: bug.language,
     });
   });
 
@@ -41,13 +42,23 @@ const UserList = () => {
       width: 220,
     },
     {
-      field: 'action',
-      headerName: 'Action',
-      width: 160,
-      renderCell: (params) => {
-        return <button>ffff</button>;
-      },
+      field: 'bugName',
+      headerName: 'Bug Name',
+      width: 220,
     },
+    {
+      field: 'language',
+      headerName: 'Language',
+      width: 220,
+    }
+    // {
+    //   field: 'action',
+    //   headerName: 'Action',
+    //   width: 160,
+    //   renderCell: (params) => {
+    //     return <button>ffff</button>;
+    //   },
+    // },
   ];
 
   return (

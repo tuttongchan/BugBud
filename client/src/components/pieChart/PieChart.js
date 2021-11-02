@@ -5,10 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { bugsDetails } from '../../actions/bugActions';
 
 const PieChart = () => {
-  const [bugCount, setBugCount] = useState([]);
-
-  const [reactCount, setReactCount] = useState(null);
-
   const dispatch = useDispatch();
   const allBugs = useSelector((state) => state.bugsDetails.bugs || []);
   const { loading, error } = allBugs;
@@ -16,8 +12,6 @@ const PieChart = () => {
   useEffect(() => {
     dispatch(bugsDetails());
   }, [dispatch]);
-
-  console.log(allBugs);
 
   let rows = [];
   rows = allBugs.map((bug, i) => {
