@@ -5,6 +5,7 @@ import {
   bugDeleteReducer,
   bugDetailsReducer,
   bugsDetailsReducer,
+  bugUpdateReducer,
 } from './reducers/bugReducer';
 import {
   imagesDetailsReducer,
@@ -35,6 +36,7 @@ const reducer = combineReducers({
   bugsDetails: bugsDetailsReducer,
   bugDetails: bugDetailsReducer,
   bugCreate: bugCreateReducer,
+  bugUpdate: bugUpdateReducer,
   bugDelete: bugDeleteReducer,
   imagesDetails: imagesDetailsReducer,
   imageDetails: imageDetailsReducer,

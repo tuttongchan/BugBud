@@ -5,13 +5,10 @@ import { bugsDetails } from '../../actions/bugActions';
 import LoadingBox from '../../subComponents/loadingBox/LoadingBox';
 import BugItem from '../../subComponents/bugItem/BugItem';
 
-const BugList = () => {
+const BugList = ({ search }) => {
   const dispatch = useDispatch();
   const allBugs = useSelector((state) => state.bugsDetails);
   const { loading, error, bugs } = allBugs;
-
-  console.log(allBugs);
-  console.log(bugs);
 
   useEffect(() => {
     dispatch(bugsDetails());
@@ -43,9 +40,19 @@ const BugList = () => {
         <></>
       ) : (
         <div className="bugitem-container">
-          {bugs.map((bug) => (
-            <BugItem key={bug._id} bug={bug} />
-          ))}
+          {bugs
+            .filter((bug) => {
+              if (search === '') {
+                return bug;
+              } else if (
+                bug.bugName.toLowerCase().includes(search.toLowerCase())
+              ) {
+                return bug;
+              }
+            })
+            .map((bug) => (
+              <BugItem key={bug._id} bug={bug} />
+            ))}
         </div>
       )}
     </div>

@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { createImage } from '../../actions/imageActions';
 
 const TabImages = () => {
+  const [search, setSearch] = useState('');
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const [imageForm, setImageForm] = useState(null);
@@ -85,6 +86,7 @@ const TabImages = () => {
             type="text"
             placeholder="Search..."
             className="tabbugs-input"
+            onChange={(e) => setSearch(e.target.value)}
           />
           <div className="search-button">
             <i className="fas fa-search"></i>
@@ -161,7 +163,7 @@ const TabImages = () => {
           </form>
         </div>
       </Modal>
-      <ImageList />
+      <ImageList search={search} />
     </div>
   );
 };

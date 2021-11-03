@@ -13,6 +13,10 @@ const {
   BUG_DELETE_SUCCESS,
   BUG_DELETE_FAIL,
   BUG_DELETE_RESET,
+  BUG_UPDATE_REQUEST,
+  BUG_UPDATE_SUCCESS,
+  BUG_UPDATE_FAIL,
+  BUG_UPDATE_RESET,
 } = require('../constants/bugConstants');
 
 // export const bugsDetailsReducer = (state = { bugs: [] }, action) => {
@@ -69,6 +73,21 @@ export const bugCreateReducer = (state = {}, action) => {
     case BUG_CREATE_FAIL:
       return { loading: false, error: action.payload };
     case BUG_CREATE_RESET:
+      return {};
+    default:
+      return state;
+  }
+};
+
+export const bugUpdateReducer = (state = {}, action) => {
+  switch (action.type) {
+    case BUG_UPDATE_REQUEST:
+      return { loading: true };
+    case BUG_UPDATE_SUCCESS:
+      return { loading: false, success: true };
+    case BUG_UPDATE_FAIL:
+      return { loading: false, error: action.payload };
+    case BUG_UPDATE_RESET:
       return {};
     default:
       return state;

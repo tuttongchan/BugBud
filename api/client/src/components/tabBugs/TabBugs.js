@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './tabbugs.css';
 import BugList from '../bugList/BugList';
 import Modal from 'react-modal';
-import { createBug } from '../../actions/bugActions';
-import { useDispatch } from 'react-redux';
+import { bugsDetails, createBug } from '../../actions/bugActions';
+import { useDispatch, useSelector } from 'react-redux';
 
 const TabBugs = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState('');
 
   const [bugName, setBugName] = useState('');
   const [language, setLanguage] = useState('');
@@ -14,7 +15,13 @@ const TabBugs = () => {
   const [links, setLinks] = useState('');
   const [code, setCode] = useState('');
 
-  console.log(language)
+  const dispatch = useDispatch();
+  const allBugs = useSelector((state) => state.bugsDetails);
+  const { loading, error, bugs } = allBugs;
+
+  useEffect(() => {
+    dispatch(bugsDetails());
+  }, [dispatch]);
 
   const customStyles = {
     content: {
@@ -35,13 +42,12 @@ const TabBugs = () => {
     setIsOpen(false);
   }
 
-  const dispatch = useDispatch();
   const createBugHandler = (e) => {
     e.preventDefault();
     dispatch(createBug(bugName, language, desc, links, code));
     window.location.reload();
   };
-
+  
   return (
     <div className="tabbugs-container">
       <div className="tabbugs-top-container">
@@ -51,6 +57,7 @@ const TabBugs = () => {
             type="text"
             placeholder="Search..."
             className="tabbugs-input"
+            onChange={(e) => setSearch(e.target.value)}
           />
           <div className="search-button">
             <i className="fas fa-search"></i>
@@ -85,10 +92,6 @@ const TabBugs = () => {
                 <option value="Express.js">Express.js</option>
                 <option value="MongoDB">MongoDB</option>
               </select>
-              {/* <input
-                type="text"
-                onChange={(e) => setLanguage(e.target.value)}
-              /> */}
             </div>
             <div className="modal-desc-container">
               <h4 className="modal-desc-heading">Info📚:</h4>
@@ -115,7 +118,7 @@ const TabBugs = () => {
           </form>
         </div>
       </Modal>
-      <BugList />
+      <BugList search={search} />
     </div>
   );
 };

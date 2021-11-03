@@ -12,6 +12,9 @@ import {
   BUG_DETAILS_FAIL,
   BUG_DETAILS_REQUEST,
   BUG_DETAILS_SUCCESS,
+  BUG_UPDATE_FAIL,
+  BUG_UPDATE_REQUEST,
+  BUG_UPDATE_SUCCESS,
 } from '../constants/bugConstants';
 
 export const bugsDetails = () => async (dispatch) => {
@@ -67,6 +70,20 @@ export const createBug =
       });
     }
   };
+
+export const updateBug = (bug) => async (dispatch) => {
+  dispatch({ type: BUG_UPDATE_REQUEST, payload: bug });
+  try {
+    const { data } = await Axios.put(`/api/bugs/${bug._id}`, bug);
+    dispatch({ type: BUG_UPDATE_SUCCESS, payload: data });
+  } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({ type: BUG_UPDATE_FAIL, error: message });
+  }
+};
 
 export const deleteBug = (bugId) => async (dispatch) => {
   dispatch({ type: BUG_DELETE_REQUEST, payload: bugId });

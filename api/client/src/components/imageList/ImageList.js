@@ -5,11 +5,10 @@ import ImageItem from '../../subComponents/imageItem/ImageItem';
 import LoadingBox from '../../subComponents/loadingBox/LoadingBox';
 import './imagelist.css';
 
-const ImageList = () => {
+const ImageList = ({ search }) => {
   const dispatch = useDispatch();
   const allImages = useSelector((state) => state.imagesDetails);
   const { loading, error, images } = allImages;
-  // console.log(allImages);
 
   useEffect(() => {
     dispatch(imagesDetails());
@@ -23,9 +22,22 @@ const ImageList = () => {
         <></>
       ) : (
         <div className="bugitem-container">
-          {images.map((image) => (
+          {images
+            .filter((image) => {
+              if (search === '') {
+                return image;
+              } else if (
+                image.imageName.toLowerCase().includes(search.toLowerCase())
+              ) {
+                return image;
+              }
+            })
+            .map((image) => (
+              <ImageItem key={image._id} image={image} />
+            ))}
+          {/* {images.map((image) => (
             <ImageItem key={image._id} image={image} />
-          ))}
+          ))} */}
         </div>
       )}
     </div>
