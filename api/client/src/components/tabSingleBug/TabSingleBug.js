@@ -16,10 +16,7 @@ const TabSingleBug = ({ productId }) => {
   console.log(bugSingle);
 
   const bugDelete = useSelector((state) => state.bugDelete);
-  const {
-    loading: loadingDelete,
-    error: errorDelete,
-  } = bugDelete;
+  const { loading: loadingDelete, error: errorDelete } = bugDelete;
 
   useEffect(() => {
     dispatch(bugDetails(productId));
@@ -59,7 +56,9 @@ const TabSingleBug = ({ productId }) => {
           </div>
           <div className="tabsinglebug-links-container">
             <h4 className="tabsinglebug-links-heading">Links🔗: </h4>
-            <h4 className="tabsinglebug-links">{bug.links}</h4>
+            <a className="tabsinglebug-links" href={bug.links} target="_blank">
+              {bug.links}
+            </a>
           </div>
           <h4 className="tabsinglebug-code-heading">Code Snippet:</h4>
           <div className="tabsinglebug-code-container">

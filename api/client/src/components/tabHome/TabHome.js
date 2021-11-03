@@ -21,7 +21,6 @@ const TabHome = () => {
 
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
-  console.log(userInfo);
 
   const dispatch = useDispatch();
   const allBugs = useSelector((state) => state.bugsDetails.bugs || []);
@@ -210,12 +209,10 @@ const TabHome = () => {
           style={{ flexDirection: 'column' }}
         >
           <div style={{ padding: '1rem .5rem 0 .5rem' }}>
-            {/* <div> */}
             <h1>Bugs per Month</h1>
           </div>
           <div className="bargraph-container">
             <BarGraph />
-            {/* <PieChart /> */}
           </div>
         </div>
       </div>

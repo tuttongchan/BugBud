@@ -1,93 +1,99 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
+import { useDispatch, useSelector } from 'react-redux';
+import { bugsDetails } from '../../actions/bugActions';
+import moment from 'moment';
 
-const data = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-  datasets: [
-    {
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-      ],
-      borderWidth: 2,
-    },
-  ],
-};
-
-const options = {
-  scales: {
-    yAxes: [
-      {
-        ticks: {
-          beginAtZero: true,
-        },
-      },
-    ],
-  },
-};
+// const options = {
+//   scales: {
+//     yAxes: [
+//       {
+//         ticks: {
+//           beginAtZero: true,
+//         },
+//       },
+//     ],
+//   },
+// };
 
 const BarGraph = () => {
+  const dispatch = useDispatch();
+  const allBugs = useSelector((state) => state.bugsDetails.bugs || []);
+  const { loading, error } = allBugs;
+
+  console.log(allBugs);
+
+  useEffect(() => {
+    dispatch(bugsDetails());
+  }, [dispatch]);
+
+  let rows = [];
+  rows = allBugs.map((bug, i) => {
+    return (rows = {
+      id: i + 1,
+      bugName: bug.bugName,
+      language: bug.language,
+      createdAt: moment(bug.createdAt).format('MMM Do YY').slice(0, 3),
+    });
+  });
+  console.log(rows);
+
+  const september = rows
+    .filter((row) => {
+      return row.createdAt === 'Sep';
+    })
+    .map((item) => {
+      return item.createdAt;
+    });
+  console.log(september);
+
+  const october = rows
+    .filter((row) => {
+      return row.createdAt === 'Oct';
+    })
+    .map((item) => {
+      return item.createdAt;
+    });
+  console.log(october);
+
+  const november = rows
+    .filter((row) => {
+      return row.createdAt === 'Nov';
+    })
+    .map((item) => {
+      return item.createdAt;
+    });
+  console.log(november);
+
+  const data = {
+    labels: ['Sep', 'Oct', 'Nov'],
+    datasets: [
+      {
+        label: '# of Bugs',
+        data: [september.length, october.length, november.length],
+        backgroundColor: [
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+        ],
+        borderColor: [
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+        ],
+        borderWidth: 2,
+      },
+    ],
+  };
+
   return (
     <div>
       <div className="header">
-        <div className="links">
-        </div>
+        <div className="links"></div>
       </div>
-      <Bar data={data} options={options} />
+      <Bar data={data} />
     </div>
   );
 };
 
 export default BarGraph;
-
-// ---------------------------------------------------
-
-// import React from 'react';
-// import { VictoryChart, VictoryAxis, VictoryBar } from 'victory';
-// const data = [
-//   { quarter: 1, earnings: 13000 },
-//   { quarter: 2, earnings: 16500 },
-//   { quarter: 3, earnings: 14250 },
-//   { quarter: 4, earnings: 19000 },
-// ];
-
-// const BarGraph = () => {
-//   return (
-//     <div>
-//       <VictoryChart
-//         // domainPadding will add space to each side of VictoryBar to
-//         // prevent it from overlapping the axis
-//         domainPadding={20}
-//       >
-//         <VictoryAxis
-//           // tickValues specifies both the number of ticks and where
-//           // they are placed on the axis
-//           tickValues={[1, 2, 3, 4]}
-//           tickFormat={['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4']}
-//         />
-//         <VictoryAxis
-//           dependentAxis
-//           // tickFormat specifies how ticks should be displayed
-//           tickFormat={(x) => `$${x / 1000}k`}
-//         />
-//         <VictoryBar data={data} x="quarter" y="earnings" />
-//       </VictoryChart>
-//     </div>
-//   );
-// };
-
-// export default BarGraph;

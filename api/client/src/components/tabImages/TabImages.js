@@ -73,6 +73,7 @@ const TabImages = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createImage(imageForm));
+    window.location.reload();
   };
 
   return (

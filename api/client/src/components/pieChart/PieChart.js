@@ -95,7 +95,14 @@ const PieChart = () => {
     datasets: [
       {
         label: '# of Votes',
-        data: [javascript.length, react.length, redux.length, express.length, mongoDB.length, CSS.length],
+        data: [
+          javascript.length,
+          react.length,
+          redux.length,
+          express.length,
+          mongoDB.length,
+          CSS.length,
+        ],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',

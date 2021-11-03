@@ -46,18 +46,38 @@
   width: 50rem;
 }
 
+.tabsinglebug-links-container {
+  margin-bottom: 1rem;
+  overflow-x: hidden;
+}
+
 /* Heading and Paragraphs */
 .tabsinglebug-desc-heading,
 .tabsinglebug-language-heading,
 .tabsinglebug-links-heading {
-  width: 7rem;
   margin-bottom: 1rem;
+}
+
+.tabsinglebug-desc-heading {
+  margin-right: 2rem;
+}
+
+.tabsinglebug-language-heading {
+  margin-right: 1.25rem;
+}
+
+.tabsinglebug-links-heading{
+  margin-right: 1.3rem;
 }
 
 .tabsinglebug-desc,
 .tabsinglebug-language,
 .tabsinglebug-links {
   font-weight: 400;
+}
+
+.tabsinglebug-links {
+  color: #0645ad;
 }
 
 .tabsinglebug-code-heading {

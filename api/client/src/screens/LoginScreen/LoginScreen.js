@@ -10,7 +10,7 @@ const LoginScreen = () => {
   const [password, setPassword] = useState('');
 
   const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo, error } = userSignin;
+  const { userInfo} = userSignin;
 
   const dispatch = useDispatch();
   const submitHandler = (e) => {
@@ -36,7 +36,6 @@ const LoginScreen = () => {
         <div className="login-top-container">
           <h1>Login</h1>
         </div>
-        {/* <form onSubmit={submitHandler}> */}
         <form>
           <div className="login-bottom-container">
             <TextField
@@ -60,7 +59,6 @@ const LoginScreen = () => {
             <button onClick={guestHandler}>Guest</button>
           </div>
         </form>
-        {/* {error ? <h1>{error}</h1> : null} */}
       </div>
     </div>
   );

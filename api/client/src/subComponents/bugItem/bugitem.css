@@ -18,6 +18,10 @@
   width: 100%;
 }
 
+.bugitem-language-container {
+  display: flex;
+}
+
 .bugitem-language-heading {
   font-size: 1rem;
   margin-bottom: 0.6rem;
@@ -29,6 +33,9 @@
 }
 
 .bugitem-desc-container {
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
   margin-bottom: 0.6rem;
 }
 
@@ -42,11 +49,16 @@
 }
 
 .bugitem-links-container {
+  /* display: flex; */
+  align-items: center;
+  overflow-x: hidden;
   margin-bottom: 1rem;
 }
 
 .bugitem-links {
   font-size: 0.85rem;
+  color: #0645AD;
+  /* border-bottom: .5px solid #0645AD; */
 }
 
 .bugitem-links-span {
