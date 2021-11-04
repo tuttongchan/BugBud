@@ -67,7 +67,7 @@ const TabImages = () => {
   const handleUpload = (e) => {
     e.preventDefault();
     upload();
-    setTimeout(() => setUploadStatus(true), 2000);
+    setTimeout(() => setUploadStatus(true), 1700);
   };
 
   const dispatch = useDispatch();

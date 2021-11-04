@@ -6,7 +6,6 @@ import Topbar from '../../components/topbar/Topbar';
 
 const SingleImageScreen = (props) => {
   const imageId = props.match.params.id;
-  console.log(imageId);
   return (
     <div className="singleimagecreen-container">
       <Topbar />

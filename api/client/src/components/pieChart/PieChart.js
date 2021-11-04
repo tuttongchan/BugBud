@@ -22,11 +22,6 @@ const PieChart = () => {
     });
   });
 
-  // const sir = javascript.map((item) => {
-  //   return item.bugName;
-  // });
-  // console.log(sir);
-
   const HTML = rows
     .filter((row) => {
       return row.language === 'HTML';
@@ -34,7 +29,6 @@ const PieChart = () => {
     .map((item) => {
       return item.language;
     });
-  // console.log(HTML.length);
 
   const CSS = rows
     .filter((row) => {
@@ -43,7 +37,6 @@ const PieChart = () => {
     .map((item) => {
       return item.language;
     });
-  // console.log(CSS.length);
 
   const javascript = rows
     .filter((row) => {
@@ -52,7 +45,6 @@ const PieChart = () => {
     .map((item) => {
       return item.language;
     });
-  // console.log(javascript.length);
 
   const react = rows
     .filter((row) => {
@@ -61,7 +53,6 @@ const PieChart = () => {
     .map((item) => {
       return item.language;
     });
-  // console.log(react);
 
   const redux = rows
     .filter((row) => {
@@ -70,7 +61,6 @@ const PieChart = () => {
     .map((item) => {
       return item.language;
     });
-  // console.log(redux);
 
   const express = rows
     .filter((row) => {
@@ -79,7 +69,6 @@ const PieChart = () => {
     .map((item) => {
       return item.language;
     });
-  // console.log(express);
 
   const mongoDB = rows
     .filter((row) => {
@@ -88,7 +77,6 @@ const PieChart = () => {
     .map((item) => {
       return item.language;
     });
-  // console.log(mongoDB);
 
   const data = {
     labels: ['Javascript', 'React.js', 'Redux', 'Express.js', 'MongoDB', 'CSS'],

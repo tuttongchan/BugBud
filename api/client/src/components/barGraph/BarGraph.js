@@ -4,24 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { bugsDetails } from '../../actions/bugActions';
 import moment from 'moment';
 
-// const options = {
-//   scales: {
-//     yAxes: [
-//       {
-//         ticks: {
-//           beginAtZero: true,
-//         },
-//       },
-//     ],
-//   },
-// };
-
 const BarGraph = () => {
   const dispatch = useDispatch();
   const allBugs = useSelector((state) => state.bugsDetails.bugs || []);
   const { loading, error } = allBugs;
-
-  console.log(allBugs);
 
   useEffect(() => {
     dispatch(bugsDetails());
@@ -36,7 +22,6 @@ const BarGraph = () => {
       createdAt: moment(bug.createdAt).format('MMM Do YY').slice(0, 3),
     });
   });
-  console.log(rows);
 
   const september = rows
     .filter((row) => {
@@ -45,7 +30,6 @@ const BarGraph = () => {
     .map((item) => {
       return item.createdAt;
     });
-  console.log(september);
 
   const october = rows
     .filter((row) => {
@@ -54,7 +38,6 @@ const BarGraph = () => {
     .map((item) => {
       return item.createdAt;
     });
-  console.log(october);
 
   const november = rows
     .filter((row) => {
@@ -63,7 +46,6 @@ const BarGraph = () => {
     .map((item) => {
       return item.createdAt;
     });
-  console.log(november);
 
   const data = {
     labels: ['Sep', 'Oct', 'Nov'],

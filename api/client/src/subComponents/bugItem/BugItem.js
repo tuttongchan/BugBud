@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './bugitem.css';
 
 const BugItem = ({ bug }) => {
-  // console.log(bug._id);
 
   return (
     <Link

@@ -11,12 +11,10 @@ const TabSingleImage = ({ imageId }) => {
   const dispatch = useDispatch();
   const singleImage = useSelector((state) => state.imageDetails);
   const { loading, error, image } = singleImage;
-  console.log(singleImage);
 
   useEffect(() => {
     dispatch(imageDetails(imageId));
   }, [dispatch, imageId]);
-  console.log(imageId);
 
   const deleteHandler = (id) => {
     dispatch(deleteImage(id));

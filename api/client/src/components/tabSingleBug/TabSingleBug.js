@@ -18,12 +18,10 @@ const TabSingleBug = ({ productId }) => {
 
   const history = useHistory();
 
-  console.log(productId);
   const dispatch = useDispatch();
 
   const bugSingle = useSelector((state) => state.bugDetails);
   const { loading, error, bug } = bugSingle;
-  console.log(bugSingle);
 
   const bugUpdateSingle = useSelector((state) => state.bugUpdate);
   const {

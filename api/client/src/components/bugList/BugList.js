@@ -14,24 +14,6 @@ const BugList = ({ search }) => {
     dispatch(bugsDetails());
   }, [dispatch]);
 
-  // let rows = [];
-  // rows = allBugs.map((bug, i) => {
-  //   return (rows = {
-  //     id: i + 1,
-  //     bugName: bug.bugName,
-  //     language: bug.language,
-  //     desc: bug.desc,
-  //     links: bug.links,
-  //     code: bug.code,
-  //   });
-  // });
-  // console.log(rows)
-
-  // const createBugHandler = (e) => {
-  //   e.preventDefault();
-  //   dispatch(createBug(bugName, language, desc, links, code));
-  // };
-
   return (
     <div className="buglist-container">
       {loading ? (

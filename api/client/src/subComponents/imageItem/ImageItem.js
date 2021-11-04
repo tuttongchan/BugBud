@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './imageitem.css';
 
 const ImageItem = ({ image }) => {
-  console.log(image);
 
   return (
     <Link to={`image/${image._id}`} style={{textDecoration: 'none', color: '#000'}}>

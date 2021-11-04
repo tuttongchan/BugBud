@@ -11,22 +11,6 @@ const HomeScreen = () => {
   const { userInfo } = userSignin;
 
   let history = useHistory();
-  // const [tab, setTab] = useState('Home');
-  // const [content, setContent] = useState();
-
-  // useEffect(() => {
-  //   switch (tab) {
-  //     case 'Home':
-  //       setContent(<TabHome />);
-  //       break;
-  //     case 'Bugs':
-  //       setContent(<TabBugs />);
-  //       console.log(content)
-  //       break;
-  //     default:
-  //       setContent(<div></div>);
-  //   }
-  // }, [tab]);
 
   useEffect(() => {
     if (!userInfo) {
