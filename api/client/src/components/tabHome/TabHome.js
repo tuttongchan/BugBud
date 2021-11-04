@@ -90,8 +90,7 @@ const TabHome = () => {
               <div className="notification-right-spans-container">
                 {/* <span className="notification-span-red">Bugs this month</span> */}
                 <span className="notification-span-black">
-                  {/* Completed this month */}
-                  All Users
+                  Total Users
                 </span>
               </div>
               <div className="notification-arrow-container">

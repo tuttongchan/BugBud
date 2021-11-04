@@ -35,7 +35,10 @@ const LoginScreen = () => {
     <div className="loginscreen-container">
       <div className="login-container">
         <div className="login-top-container">
-          <h1>Login</h1>
+          <h1>
+            BugBud
+            <i className="fas fa-bug" style={{marginLeft: '5px', fontSize: '1.7rem'}}></i>
+          </h1>
         </div>
         <form>
           <div className="login-bottom-container">

@@ -67,7 +67,7 @@ const TabImages = () => {
   const handleUpload = (e) => {
     e.preventDefault();
     upload();
-    setTimeout(() => setUploadStatus(true), 1700);
+    setTimeout(() => setUploadStatus(true), 1500);
   };
 
   const dispatch = useDispatch();
@@ -111,7 +111,6 @@ const TabImages = () => {
                 className="writeImg"
                 src={URL.createObjectURL(image)}
                 alt=""
-                // alt="form image"
               />
             )}
             <div className="writeFormGroup">
@@ -142,8 +141,7 @@ const TabImages = () => {
                 className="modal-submit-button upload-image-button"
                 onClick={handleUpload}
               >
-                Upload Image
-                {/* {uploadStatus ? 'Loading...' : 'Upload Image'} */}
+                {uploadStatus ? 'Done Uploading' : 'Upload Image'}
               </button>
               {uploadStatus ? (
                 <>

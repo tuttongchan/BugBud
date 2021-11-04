@@ -22,12 +22,8 @@ const HomeScreen = () => {
     <div className="homescreen-container">
       <Topbar />
       <div className="bottom-container">
-        {/* <Dashboard setTab={setTab} /> */}
-        {/* {content} */}
-
         <Dashboard />
         <TabHome />
-        {/* <Content /> */}
       </div>
     </div>
   );

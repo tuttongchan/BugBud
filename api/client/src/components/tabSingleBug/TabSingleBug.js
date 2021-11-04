@@ -151,12 +151,17 @@ const TabSingleBug = ({ productId }) => {
                     onChange={(e) => setLanguage(e.target.value)}
                   >
                     <option value="">Select :</option>
+                    <option value="HTML">HTML</option>
                     <option value="CSS">CSS</option>
                     <option value="Javascript">Javascript</option>
                     <option value="React.js">React.js</option>
                     <option value="Redux">Redux</option>
+                    <option value="Node.js"></option>
                     <option value="Express.js">Express.js</option>
                     <option value="MongoDB">MongoDB</option>
+                    <option value="Python">Python</option>
+                    <option value="Git">Git</option>
+                    <option value="other">other</option>
                   </select>
                 </div>
                 <div className="modal-desc-container">

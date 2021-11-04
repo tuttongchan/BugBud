@@ -32,7 +32,6 @@ const TabSingleImage = ({ imageId }) => {
         <div>
           <div className="tabsingleimage-name-container">
             <h1 className="tabsingleimage-heading">{image.imageName}</h1>
-            <i className="fa-solid fa-pen-to-square"></i>
             <i
               className="fa-solid fa-trash-can"
               onClick={() => deleteHandler(image._id)}

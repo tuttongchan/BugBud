@@ -17,7 +17,6 @@ function App() {
         <Switch>
           <Route path="/" component={HomeScreen} exact></Route>
           <Route path="/login" component={LoginScreen} exact></Route>
-          {/* <Route path="/register" component={RegisterScreen} exact></Route> */}
 
           <Route path="/bugs" component={BugsScreen} exact></Route>
           <Route path="/bug/:id" component={SingleBugScreen} exact></Route>
