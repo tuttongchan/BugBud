@@ -24,6 +24,7 @@
 
 .bugitem-language-heading {
   font-size: 1rem;
+  margin-right: 0.8rem;
   margin-bottom: 0.6rem;
 }
 
@@ -33,9 +34,8 @@
 }
 
 .bugitem-desc-container {
-  display: flex;
   align-items: center;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   margin-bottom: 0.6rem;
 }
 
@@ -43,13 +43,14 @@
   font-size: 0.85rem;
 }
 
-.bugitem-desc-span {
+.bugitem-desc-heading {
+  display: flex;
   font-weight: 800;
   font-size: 0.9rem;
+  margin-bottom: .3rem;
 }
 
 .bugitem-links-container {
-  /* display: flex; */
   align-items: center;
   overflow-x: hidden;
   margin-bottom: 1rem;
@@ -57,8 +58,7 @@
 
 .bugitem-links {
   font-size: 0.85rem;
-  color: #0645AD;
-  /* border-bottom: .5px solid #0645AD; */
+  color: #0645ad;
 }
 
 .bugitem-links-span {

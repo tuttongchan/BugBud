@@ -124,10 +124,14 @@ const TabSingleBug = ({ productId }) => {
               {bug.links}
             </a>
           </div>
-          <h4 className="tabsinglebug-code-heading">Code Snippet:</h4>
-          <div className="tabsinglebug-code-container">
-            <p className="tabsinglebug-code">{bug.code}</p>
-          </div>
+          {!bug.code ? null : (
+            <>
+              <h4 className="tabsinglebug-code-heading">Code Snippet:</h4>
+              <div className="tabsinglebug-code-container">
+                <p className="tabsinglebug-code">{bug.code}</p>
+              </div>
+            </>
+          )}
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
