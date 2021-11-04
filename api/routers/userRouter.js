@@ -13,7 +13,7 @@ userRouter.post(
       if (bcrypt.compareSync(req.body.password, user.password)) {
         res.send({
           _id: user._id,
-          name: user.name,
+          userName: user.userName,
           email: user.email,
           isAdmin: user.isAdmin,
           token: generateToken(user),
@@ -29,14 +29,14 @@ userRouter.post(
   '/register',
   expressAsyncHandler(async (req, res) => {
     const user = new User({
-      name: req.body.name,
+      userName: req.body.userName,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 8),
     });
     const createdUser = await user.save();
     res.send({
       _id: createdUser._id,
-      name: createdUser.name,
+      userName: createdUser.userName,
       email: createdUser.email,
       isAdmin: createdUser.isAdmin,
       token: generateToken(createdUser),
@@ -62,7 +62,7 @@ userRouter.put(
   expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
     if (user) {
-      user.name = req.body.name || user.name;
+      user.userName = req.body.userName || user.userName;
       user.email = req.body.email || user.email;
       if (req.body.password) {
         user.password = bcrypt.hashSync(req.body.password, 8);
@@ -70,7 +70,7 @@ userRouter.put(
       const updatedUser = await user.save();
       res.send({
         _id: updatedUser._id,
-        name: updatedUser.name,
+        userName: updatedUser.userName,
         email: updatedUser.email,
         isAdmin: updatedUser.isAdmin,
         token: generateToken(updatedUser),

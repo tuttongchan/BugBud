@@ -8,9 +8,6 @@ import { bugsDetails } from '../../actions/bugActions';
 import { useEffect } from 'react';
 
 const TabHome = () => {
-  const userSignin = useSelector((state) => state.userSignin);
-  const { userInfo } = userSignin;
-
   const dispatch = useDispatch();
   const allBugs = useSelector((state) => state.bugsDetails.bugs || []);
   const { loading, error } = allBugs;
