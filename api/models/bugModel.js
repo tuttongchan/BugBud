@@ -2,11 +2,11 @@ import mongoose from 'mongoose';
 
 const bugSchema = new mongoose.Schema(
   {
-    bugName: { type: String, required: true },
-    language: { type: String, required: true },
-    desc: { type: String, required: true },
-    links: { type: String, required: true },
-    code: { type: String, required: true },
+    bugName: { type: String, required: false },
+    language: { type: String, required: false },
+    desc: { type: String, required: false },
+    links: { type: String, required: false },
+    code: { type: String, required: false },
   },
   {
     timestamps: true,
