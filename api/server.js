@@ -8,7 +8,7 @@ import path from 'path'
 
 dotenv.config();
 
-const app = express();
+const app = express()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -25,11 +25,14 @@ app.use('/api/bugs', bugRouter);
 app.use('/api/images', imageRouter)
 
 const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(
+  express.static(path.join(__dirname, '/client/build'))
+);
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/build/index.html'));
+  res.sendFile(
+    path.join(__dirname, '/client/build', 'index.html')
+  );
 });
-
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

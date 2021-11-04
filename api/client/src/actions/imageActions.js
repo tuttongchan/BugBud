@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { axiosInstance } from '../config';
 import {
   IMAGES_DETAILS_FAIL,
   IMAGES_DETAILS_REQUEST,
@@ -17,7 +18,7 @@ import {
 export const imagesDetails = () => async (dispatch) => {
   dispatch({ type: IMAGES_DETAILS_REQUEST });
   try {
-    const { data } = await Axios.get('/api/images');
+    const { data } = await axiosInstance.get('/api/images');
     dispatch({ type: IMAGES_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     console.log(error.message);
@@ -34,7 +35,7 @@ export const imagesDetails = () => async (dispatch) => {
 export const imageDetails = (imageId) => async (dispatch) => {
   dispatch({ type: IMAGE_DETAILS_REQUEST, payload: imageId });
   try {
-    const { data } = await Axios.get(`/api/images/${imageId}`);
+    const { data } = await axiosInstance.get(`/api/images/${imageId}`);
     dispatch({ type: IMAGE_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     const message =
@@ -45,16 +46,10 @@ export const imageDetails = (imageId) => async (dispatch) => {
   }
 };
 
-// export const createImage = (imageName, desc, image) => async (dispatch) => {
 export const createImage = (imageForm) => async (dispatch) => {
   dispatch({ type: IMAGE_CREATE_REQUEST });
   try {
-    // const { data } = await Axios.post('/api/images', {
-    //   imageName,
-    //   desc,
-    //   image,
-    // });
-    const { data } = await Axios.post('/api/images', imageForm);
+    const { data } = await axiosInstance.post('/api/images', imageForm);
     dispatch({ type: IMAGE_CREATE_SUCCESS, payload: data.image });
   } catch (error) {
     dispatch({
@@ -70,7 +65,7 @@ export const createImage = (imageForm) => async (dispatch) => {
 export const deleteImage = (imageId) => async (dispatch) => {
   dispatch({ type: IMAGE_DELETE_REQUEST, payload: imageId });
   try {
-    const { data } = Axios.delete(`/api/images/${imageId}`);
+    const { data } = axiosInstance.delete(`/api/images/${imageId}`);
     dispatch({ type: IMAGE_DELETE_SUCCESS, payload: data });
   } catch (error) {
     const message =

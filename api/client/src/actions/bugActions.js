@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { axiosInstance } from '../config';
 import {
   BUGS_DETAILS_FAIL,
   BUGS_DETAILS_REQUEST,
@@ -20,7 +21,7 @@ import {
 export const bugsDetails = () => async (dispatch) => {
   dispatch({ type: BUGS_DETAILS_REQUEST });
   try {
-    const { data } = await Axios.get('/api/bugs');
+    const { data } = await axiosInstance.get('/api/bugs');
     dispatch({ type: BUGS_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     console.log(error.message);
@@ -37,7 +38,7 @@ export const bugsDetails = () => async (dispatch) => {
 export const bugDetails = (bugId) => async (dispatch) => {
   dispatch({ type: BUG_DETAILS_REQUEST, payload: bugId });
   try {
-    const { data } = await Axios.get(`/api/bugs/${bugId}`);
+    const { data } = await axiosInstance.get(`/api/bugs/${bugId}`);
     dispatch({ type: BUG_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     const message =
@@ -52,7 +53,7 @@ export const createBug =
   (bugName, language, desc, links, code) => async (dispatch) => {
     dispatch({ type: BUG_CREATE_REQUEST });
     try {
-      const { data } = await Axios.post('/api/bugs', {
+      const { data } = await axiosInstance.post('/api/bugs', {
         bugName,
         language,
         desc,
@@ -74,7 +75,7 @@ export const createBug =
 export const updateBug = (bug) => async (dispatch) => {
   dispatch({ type: BUG_UPDATE_REQUEST, payload: bug });
   try {
-    const { data } = await Axios.put(`/api/bugs/${bug._id}`, bug);
+    const { data } = await axiosInstance.put(`/api/bugs/${bug._id}`, bug);
     dispatch({ type: BUG_UPDATE_SUCCESS, payload: data });
   } catch (error) {
     const message =
@@ -88,7 +89,7 @@ export const updateBug = (bug) => async (dispatch) => {
 export const deleteBug = (bugId) => async (dispatch) => {
   dispatch({ type: BUG_DELETE_REQUEST, payload: bugId });
   try {
-    const { data } = Axios.delete(`/api/bugs/${bugId}`);
+    const { data } = axiosInstance.delete(`/api/bugs/${bugId}`);
     dispatch({ type: BUG_DELETE_SUCCESS, payload: data });
   } catch (error) {
     const message =
