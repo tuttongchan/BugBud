@@ -34,8 +34,6 @@ const LoginScreen = () => {
   return (
     <div className="loginscreen-container">
       <div className="login-container">
-        {loading && <LoadingBox />}
-        {error && <></>}
         <div className="login-top-container">
           <h1>Login</h1>
         </div>
