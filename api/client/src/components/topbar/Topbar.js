@@ -8,6 +8,8 @@ const Topbar = () => {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
+  const { name: profileName } = userInfo
+
   const dispatch = useDispatch();
   const signoutHandler = () => {
     dispatch(signout());
@@ -24,7 +26,7 @@ const Topbar = () => {
       </div>
       <div className="topbar-right-container">
         <div className="topbar-profile-container">
-          <h5>{userInfo.name[0].toUpperCase()}</h5>
+          <h5>{profileName[0].toUpperCase()}</h5>
         </div>
         <div className="topbar-dropdown-container">
           <div onClick={signoutHandler}>
