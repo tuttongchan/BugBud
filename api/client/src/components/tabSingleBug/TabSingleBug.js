@@ -5,7 +5,6 @@ import { bugDetails, deleteBug, updateBug } from '../../actions/bugActions';
 import LoadingBox from '../../subComponents/loadingBox/LoadingBox';
 import { useHistory } from 'react-router';
 import Modal from 'react-modal';
-import { set } from 'mongoose';
 
 const TabSingleBug = ({ productId }) => {
   const [modalIsOpen, setIsOpen] = useState(false);

@@ -8,7 +8,7 @@ const Topbar = () => {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
-  console.log(userInfo)
+  console.log(userInfo);
 
   const dispatch = useDispatch();
   const signoutHandler = () => {
@@ -19,14 +19,14 @@ const Topbar = () => {
   return (
     <div className="topbar-container">
       <div className="topbar-logo-container">
-        <Link to='/' style={{ textDecoration: 'none', color: '#000' }}>
+        <Link to="/" style={{ textDecoration: 'none', color: '#000' }}>
           <h4>BugBud</h4>
         </Link>
         <i className="fas fa-bug"></i>
       </div>
       <div className="topbar-right-container">
         <div className="topbar-profile-container">
-          <h5>{userInfo.userName[0].toUpperCase()}</h5>
+          {/* <h5>{userInfo.userName[0].toUpperCase()}</h5> */}
         </div>
         <div className="topbar-dropdown-container">
           <div onClick={signoutHandler}>

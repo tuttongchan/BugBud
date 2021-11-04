@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +6,7 @@ import { bugsDetails } from '../../actions/bugActions';
 const PieChart = () => {
   const dispatch = useDispatch();
   const allBugs = useSelector((state) => state.bugsDetails.bugs || []);
-  const { loading, error } = allBugs;
+  // const { loading, error } = allBugs;
 
   useEffect(() => {
     dispatch(bugsDetails());
@@ -21,14 +20,6 @@ const PieChart = () => {
       language: bug.language,
     });
   });
-
-  const HTML = rows
-    .filter((row) => {
-      return row.language === 'HTML';
-    })
-    .map((item) => {
-      return item.language;
-    });
 
   const CSS = rows
     .filter((row) => {
