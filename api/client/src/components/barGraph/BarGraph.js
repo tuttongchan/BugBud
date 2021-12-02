@@ -47,12 +47,28 @@ const BarGraph = () => {
       return item.createdAt;
     });
 
+  const december = rows
+    .filter((row) => {
+      return row.createdAt === 'Dec';
+    })
+    .map((item) => {
+      return item.createdAt;
+    });
+
+  const january = rows
+    .filter((row) => {
+      return row.createdAt === 'Jan';
+    })
+    .map((item) => {
+      return item.createdAt;
+    });
+
   const data = {
-    labels: ['Sep', 'Oct', 'Nov'],
+    labels: ['Nov', 'Dec', 'Jan'],
     datasets: [
       {
         label: '# of Bugs',
-        data: [september.length, october.length, november.length],
+        data: [november.length, december.length, january.length],
         backgroundColor: [
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
