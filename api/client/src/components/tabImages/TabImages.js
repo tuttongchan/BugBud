@@ -82,14 +82,16 @@ const TabImages = () => {
       <div className="tabimages-top-container">
         <h4 className="tabimages-heading">Images</h4>
         <div className="tabbugs-top-right-container">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="tabbugs-input"
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <div className="search-button">
-            <i className="fas fa-search"></i>
+          <div className="input-search-images">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="tabbugs-input"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <div className="search-button">
+              <i className="fas fa-search"></i>
+            </div>
           </div>
           <div className="addbug-button" onClick={openModal}>
             <i className="fas fa-plus"></i>

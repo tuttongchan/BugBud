@@ -72,7 +72,7 @@ export const createBug =
     }
   };
 
-export const updateBug = (bug) => async (dispatch) => {
+export const updateBug = (bug) => async (dispatch) => { 
   dispatch({ type: BUG_UPDATE_REQUEST, payload: bug });
   try {
     const { data } = await axiosInstance.put(`/bugs/${bug._id}`, bug);

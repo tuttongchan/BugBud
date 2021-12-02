@@ -18,6 +18,10 @@
   margin-bottom: 1rem;
 }
 
+.input-search-images {
+  display: flex;
+}
+
 /* .addimage-button {
   display: flex;
 } */

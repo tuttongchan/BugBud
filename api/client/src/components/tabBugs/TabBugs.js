@@ -47,20 +47,22 @@ const TabBugs = () => {
     dispatch(createBug(bugName, language, desc, links, code));
     window.location.reload();
   };
-  
+
   return (
     <div className="tabbugs-container">
       <div className="tabbugs-top-container">
         <h1 className="tabbugs-heading">Bugs</h1>
         <div className="tabbugs-top-right-container">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="tabbugs-input"
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <div className="search-button">
-            <i className="fas fa-search"></i>
+          <div className="input-search-bugs">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="tabbugs-input"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <div className="search-button">
+              <i className="fas fa-search"></i>
+            </div>
           </div>
           <div className="addbug-button" onClick={openModal}>
             <i className="fas fa-plus"></i>
