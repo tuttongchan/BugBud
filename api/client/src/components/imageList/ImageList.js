@@ -35,9 +35,6 @@ const ImageList = ({ search }) => {
             .map((image) => (
               <ImageItem key={image._id} image={image} />
             ))}
-          {/* {images.map((image) => (
-            <ImageItem key={image._id} image={image} />
-          ))} */}
         </div>
       )}
     </div>

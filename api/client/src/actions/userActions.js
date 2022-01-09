@@ -1,4 +1,3 @@
-import Axios from 'axios';
 import { axiosInstance } from '../config';
 import {
   USER_DETAILS_FAIL,

@@ -1,16 +1,21 @@
-// import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import React from 'react';
 import './tabhome.css';
 import PieChart from '../pieChart/PieChart';
 import BarGraph from '../barGraph/BarGraph';
 import UserList from '../userList/UserList';
 import { useDispatch, useSelector } from 'react-redux';
 import { bugsDetails } from '../../actions/bugActions';
-import { useEffect } from 'react';
+import CodeEditor from '@uiw/react-textarea-code-editor';
 
 const TabHome = () => {
   const dispatch = useDispatch();
   const allBugs = useSelector((state) => state.bugsDetails.bugs || []);
   const { loading, error } = allBugs;
+
+  const [code, setCode] = React.useState(
+    `function add(a, b) {\n  return a + b;\n}`
+  );
 
   useEffect(() => {
     dispatch(bugsDetails());
@@ -62,7 +67,6 @@ const TabHome = () => {
     <div className="tabhome-container">
       <div className="content-grid">
         {/* <div className="content-grid-item"> */}
-
         {/* --- Notification Grid --- */}
         <div className="notification-grid">
           <div className="notification-container">
@@ -71,11 +75,7 @@ const TabHome = () => {
             </div>
             <div className="notification-right-container">
               <div className="notification-right-spans-container">
-                {/* <span className="notification-span-blue">Bugs this month</span> */}
-                <span className="notification-span-black">
-                  {/* Completed this month */}
-                  Total Bugs
-                </span>
+                <span className="notification-span-black">Total Bugs</span>
               </div>
               <div className="notification-arrow-container">
                 <i className="fas fa-arrow-right"></i>
@@ -88,10 +88,7 @@ const TabHome = () => {
             </div>
             <div className="notification-right-container">
               <div className="notification-right-spans-container">
-                {/* <span className="notification-span-red">Bugs this month</span> */}
-                <span className="notification-span-black">
-                  Total Users
-                </span>
+                <span className="notification-span-black">Total Users</span>
               </div>
               <div className="notification-arrow-container">
                 <i className="fas fa-arrow-right"></i>
@@ -163,7 +160,6 @@ const TabHome = () => {
             </div>
           </div>
         </div>
-
         <div
           className="content-grid-item-chart"
           style={{ flexDirection: 'column' }}
@@ -177,17 +173,6 @@ const TabHome = () => {
         </div>
         <div>
           <UserList />
-          {/* {loading ? (
-            <h1>Loading...</h1>
-            ) : error ? (
-              <h1>{error}</h1>
-              ) : (
-                <div className="row center">
-                {bugs.map((bug) => (
-                  <h1 key={bug.bugName}>{bug.bugName}</h1>
-                  ))}
-                  </div>
-                )} */}
         </div>
         <div
           className="content-grid-item-chart"
@@ -200,6 +185,21 @@ const TabHome = () => {
             <BarGraph />
           </div>
         </div>
+
+        {/* <CodeEditor
+          value={code}
+          language="js"
+          placeholder="Please enter JS code."
+          onChange={(evn) => setCode(evn.target.value)}
+          padding={15}
+          style={{
+            // fontSize: 12,
+            fontSize: 16,
+            backgroundColor: '#f5f5f5',
+            fontFamily:
+              'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+          }}
+        /> */}
       </div>
     </div>
   );

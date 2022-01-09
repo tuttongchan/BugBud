@@ -26,7 +26,7 @@ const Topbar = () => {
       </div>
       <div className="topbar-right-container">
         <div className="topbar-profile-container">
-          <h5>{userInfo.userName[0].toUpperCase()}</h5>
+          {/* <h5>{userInfo.userName[0].toUpperCase()}</h5> */}
         </div>
         <div className="topbar-dropdown-container">
           <div onClick={signoutHandler}>
