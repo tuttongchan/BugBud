@@ -5,6 +5,7 @@ import { bugDetails, deleteBug, updateBug } from '../../actions/bugActions';
 import LoadingBox from '../../subComponents/loadingBox/LoadingBox';
 import { useHistory } from 'react-router';
 import Modal from 'react-modal';
+import CodeEditor from '@uiw/react-textarea-code-editor';
 
 const TabSingleBug = ({ productId }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -127,9 +128,24 @@ const TabSingleBug = ({ productId }) => {
           {!bug.code ? null : (
             <>
               <h4 className="tabsinglebug-code-heading">Code Snippet:</h4>
-              <div className="tabsinglebug-code-container">
+              {/* <div className="tabsinglebug-code-container">
                 <p className="tabsinglebug-code">{bug.code}</p>
-              </div>
+              </div> */}
+
+              <CodeEditor
+                value={bug.code}
+                language="js"
+                placeholder="Please enter JS code."
+                // onChange={(evn) => setCode(evn.target.value)}
+                padding={15}
+                style={{
+                  fontSize: 17,
+                  width: '100%',
+                  backgroundColor: '#f5f5f5',
+                  fontFamily:
+                    'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+                }}
+              />
             </>
           )}
           <Modal
@@ -186,7 +202,7 @@ const TabSingleBug = ({ productId }) => {
                 </div>
                 <div className="modal-code-container">
                   <h4 className="modal-code-heading">Code🖥️:</h4>
-                  <textarea
+                  {/* <textarea
                     name="code"
                     id=""
                     cols="30"
@@ -194,7 +210,24 @@ const TabSingleBug = ({ productId }) => {
                     value={code}
                     className="modal-code-textarea"
                     onChange={(e) => setCode(e.target.value)}
-                  ></textarea>
+                  ></textarea> */}
+
+                  <CodeEditor
+                    value={bug.code}
+                    language="js"
+                    placeholder="Please enter JS code."
+                    // onChange={(evn) => setCode(evn.target.value)}
+                    padding={15}
+                    style={{
+                      fontSize: 17,
+                      marginBottom: '1rem',
+                      width: '100%',
+                      height: '100%',
+                      backgroundColor: '#f5f5f5',
+                      fontFamily:
+                        'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+                    }}
+                  />
                 </div>
                 <button type="submit" className="modal-submit-button">
                   Update Bug

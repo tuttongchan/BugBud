@@ -120,6 +120,7 @@
   background-color: cornflowerblue;
   border: 1px solid cornflowerblue;
   border-radius: 5px;
+  margin-bottom: 1.5rem;
   cursor: pointer;
   transition: all 0.3s;
 }
