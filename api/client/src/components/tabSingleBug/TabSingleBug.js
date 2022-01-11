@@ -81,7 +81,7 @@ const TabSingleBug = ({ productId }) => {
       })
     );
     // window.location.reload();
-    history.push('/bugs');
+    // history.push('/bugs');
   };
 
   console.log(language);
