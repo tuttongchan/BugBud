@@ -80,11 +80,9 @@ const TabSingleBug = ({ productId }) => {
         code,
       })
     );
-    // window.location.reload();
+    window.location.reload();
     // history.push('/bugs');
   };
-
-  console.log(language);
 
   const deleteHandler = (id) => {
     dispatch(deleteBug(id));
@@ -170,7 +168,15 @@ const TabSingleBug = ({ productId }) => {
                 </div>
                 <div className="modal-language-container">
                   <h4 className="modal-language-heading">Tech💻:</h4>
-                  <select
+                  {/* -- Input Menu -- */}
+                  <input
+                    type="text"
+                    value={language}
+                    onChange={(e) => setLanguage(e.target.value)}
+                  />
+
+                  {/* -- Select Menu -- */}
+                  {/* <select
                     name="language"
                     id="language"
                     value={language}
@@ -188,7 +194,7 @@ const TabSingleBug = ({ productId }) => {
                     <option value="Python">Python</option>
                     <option value="Git">Git</option>
                     <option value="other">other</option>
-                  </select>
+                  </select> */}
                 </div>
                 <div className="modal-desc-container">
                   <h4 className="modal-desc-heading">Info📚:</h4>
