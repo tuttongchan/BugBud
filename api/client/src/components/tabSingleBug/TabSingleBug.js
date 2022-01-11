@@ -80,7 +80,8 @@ const TabSingleBug = ({ productId }) => {
         code,
       })
     );
-    window.location.reload();
+    // window.location.reload();
+    history.push('/bugs');
   };
 
   console.log(language);
@@ -189,7 +190,6 @@ const TabSingleBug = ({ productId }) => {
                     <option value="other">other</option>
                   </select>
                 </div>
-                <select name="" id=""></select>
                 <div className="modal-desc-container">
                   <h4 className="modal-desc-heading">Info📚:</h4>
                   <input
