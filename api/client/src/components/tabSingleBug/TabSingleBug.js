@@ -171,6 +171,7 @@ const TabSingleBug = ({ productId }) => {
                   <h4 className="modal-language-heading">Tech💻:</h4>
                   <select
                     name="language"
+                    id="language"
                     value={language}
                     onChange={(e) => setLanguage(e.target.value)}
                   >
@@ -188,6 +189,7 @@ const TabSingleBug = ({ productId }) => {
                     <option value="other">other</option>
                   </select>
                 </div>
+                <select name="" id=""></select>
                 <div className="modal-desc-container">
                   <h4 className="modal-desc-heading">Info📚:</h4>
                   <input
