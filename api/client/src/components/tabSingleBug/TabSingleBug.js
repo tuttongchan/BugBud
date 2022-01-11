@@ -25,8 +25,9 @@ const TabSingleBug = ({ productId }) => {
 
   const bugUpdateSingle = useSelector((state) => state.bugUpdate);
   const {
-    // loading: loadingUpdate,
-    // error: errorUpdate,
+    // First 2
+    loading: loadingUpdate,
+    error: errorUpdate,
     success: successUpdate,
   } = bugUpdateSingle;
 
@@ -81,6 +82,8 @@ const TabSingleBug = ({ productId }) => {
     );
     window.location.reload();
   };
+
+  console.log(language);
 
   const deleteHandler = (id) => {
     dispatch(deleteBug(id));
@@ -167,6 +170,7 @@ const TabSingleBug = ({ productId }) => {
                 <div className="modal-language-container">
                   <h4 className="modal-language-heading">Tech💻:</h4>
                   <select
+                    name="language"
                     value={language}
                     onChange={(e) => setLanguage(e.target.value)}
                   >
@@ -176,7 +180,7 @@ const TabSingleBug = ({ productId }) => {
                     <option value="Javascript">Javascript</option>
                     <option value="React.js">React.js</option>
                     <option value="Redux">Redux</option>
-                    <option value="Node.js"></option>
+                    <option value="Node.js">Node.js</option>
                     <option value="Express.js">Express.js</option>
                     <option value="MongoDB">MongoDB</option>
                     <option value="Python">Python</option>
@@ -213,9 +217,10 @@ const TabSingleBug = ({ productId }) => {
                   ></textarea> */}
 
                   <CodeEditor
-                    value={bug.code}
+                    value={code}
                     language="js"
                     placeholder="Please enter JS code."
+                    onChange={(e) => setCode(e.target.value)}
                     // onChange={(evn) => setCode(evn.target.value)}
                     padding={15}
                     style={{

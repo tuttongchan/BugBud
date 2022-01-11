@@ -45,7 +45,8 @@ bugRouter.put(
       bug.links = req.body.links;
       bug.code = req.body.code;
       const updatedBug = await bug.save();
-      res.send({ message: 'Bug Updated', product: updatedBug });
+      res.send({ message: 'Bug Updated', bug: updatedBug });
+      // res.send({ message: 'Bug Updated', product: updatedBug });
     } else {
       res.status(404).send({ message: 'Product Not Found' });
     }

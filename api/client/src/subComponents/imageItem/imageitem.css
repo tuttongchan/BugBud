@@ -11,7 +11,8 @@
 
 .imageitem-img {
   border-top-left-radius: 5px;
-  width: 20rem;
+  /* width: 20rem; */
+  width: 100%;
   height: 16.5rem;
   object-fit: cover;
 }

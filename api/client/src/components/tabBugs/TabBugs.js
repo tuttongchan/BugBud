@@ -4,6 +4,7 @@ import BugList from '../bugList/BugList';
 import Modal from 'react-modal';
 import { bugsDetails, createBug } from '../../actions/bugActions';
 import { useDispatch, useSelector } from 'react-redux';
+import CodeEditor from '@uiw/react-textarea-code-editor';
 
 const TabBugs = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -109,14 +110,31 @@ const TabBugs = () => {
             </div>
             <div className="modal-code-container">
               <h4 className="modal-code-heading">Code🖥️:</h4>
-              <textarea
+              <CodeEditor
+                value={code}
+                language="js"
+                placeholder="Please enter JS code."
+                onChange={(e) => setCode(e.target.value)}
+                padding={15}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  marginBottom: '1rem',
+                  fontSize: 16,
+                  backgroundColor: '#f5f5f5',
+                  fontFamily:
+                    'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+                }}
+              />
+
+              {/* <textarea
                 name="code"
                 id=""
                 cols="30"
                 rows="10"
                 className="modal-code-textarea"
                 onChange={(e) => setCode(e.target.value)}
-              ></textarea>
+              ></textarea> */}
             </div>
             <button type="submit" className="modal-submit-button">
               Add Bug
