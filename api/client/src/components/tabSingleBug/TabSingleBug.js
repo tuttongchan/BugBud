@@ -23,6 +23,8 @@ const TabSingleBug = ({ productId }) => {
   const bugSingle = useSelector((state) => state.bugDetails);
   const { loading, error, bug } = bugSingle;
 
+  console.log(bug);
+
   const bugUpdateSingle = useSelector((state) => state.bugUpdate);
   const {
     // First 2
@@ -32,7 +34,11 @@ const TabSingleBug = ({ productId }) => {
   } = bugUpdateSingle;
 
   const bugDelete = useSelector((state) => state.bugDelete);
-  const { loading: loadingDelete, error: errorDelete } = bugDelete;
+  const {
+    loading: loadingDelete,
+    error: errorDelete,
+    success: errorSuccess,
+  } = bugDelete;
 
   useEffect(() => {
     if (successUpdate) {
@@ -46,7 +52,7 @@ const TabSingleBug = ({ productId }) => {
       setLinks(bug.links);
       setCode(bug.code);
     }
-  }, [dispatch, productId, bug, successUpdate, history]);
+  }, [dispatch, productId, bug, successUpdate, errorSuccess, history]);
 
   // Modal logic
   function openModal() {
@@ -94,6 +100,8 @@ const TabSingleBug = ({ productId }) => {
     <div className="tabsinglebug-container">
       {loadingDelete && <LoadingBox />}
       {errorDelete && <></>}
+      {/* {loadingUpdate && <LoadingBox />} */}
+      {/* {errorUpdate && <>{errorUpdate}</>} */}
       {loading ? (
         <LoadingBox />
       ) : error ? (
@@ -154,6 +162,7 @@ const TabSingleBug = ({ productId }) => {
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             style={customStyles}
+            ariaHideApp={false}
             contentLabel="Example Modal"
           >
             <div className="modal-container">
@@ -174,6 +183,7 @@ const TabSingleBug = ({ productId }) => {
                     value={language}
                     onChange={(e) => setLanguage(e.target.value)}
                   />
+                  {language}
 
                   {/* -- Select Menu -- */}
                   {/* <select
@@ -224,6 +234,7 @@ const TabSingleBug = ({ productId }) => {
                     onChange={(e) => setCode(e.target.value)}
                   ></textarea> */}
 
+                  {code}
                   <CodeEditor
                     value={code}
                     language="js"

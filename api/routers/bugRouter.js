@@ -40,7 +40,7 @@ bugRouter.put(
     const bug = await Bug.findById(bugId);
     if (bug) {
       bug.bugName = req.body.bugName;
-      bug.type = req.body.type;
+      bug.language = req.body.language;
       bug.desc = req.body.desc;
       bug.links = req.body.links;
       bug.code = req.body.code;
