@@ -87,7 +87,6 @@ const TabSingleBug = ({ productId }) => {
       })
     );
     window.location.reload();
-    // history.push('/bugs');
   };
 
   const deleteHandler = (id) => {
@@ -138,15 +137,10 @@ const TabSingleBug = ({ productId }) => {
           {!bug.code ? null : (
             <>
               <h4 className="tabsinglebug-code-heading">Code Snippet:</h4>
-              {/* <div className="tabsinglebug-code-container">
-                <p className="tabsinglebug-code">{bug.code}</p>
-              </div> */}
-
               <CodeEditor
                 value={bug.code}
                 language="js"
                 placeholder="Please enter JS code."
-                // onChange={(evn) => setCode(evn.target.value)}
                 padding={15}
                 style={{
                   fontSize: 17,
@@ -178,15 +172,13 @@ const TabSingleBug = ({ productId }) => {
                 <div className="modal-language-container">
                   <h4 className="modal-language-heading">Tech💻:</h4>
                   {/* -- Input Menu -- */}
-                  <input
+                  {/* <input
                     type="text"
                     value={language}
                     onChange={(e) => setLanguage(e.target.value)}
-                  />
-                  {language}
-
+                  /> */}
                   {/* -- Select Menu -- */}
-                  {/* <select
+                  <select
                     name="language"
                     id="language"
                     value={language}
@@ -204,7 +196,7 @@ const TabSingleBug = ({ productId }) => {
                     <option value="Python">Python</option>
                     <option value="Git">Git</option>
                     <option value="other">other</option>
-                  </select> */}
+                  </select>
                 </div>
                 <div className="modal-desc-container">
                   <h4 className="modal-desc-heading">Info📚:</h4>
@@ -234,13 +226,11 @@ const TabSingleBug = ({ productId }) => {
                     onChange={(e) => setCode(e.target.value)}
                   ></textarea> */}
 
-                  {code}
                   <CodeEditor
                     value={code}
                     language="js"
                     placeholder="Please enter JS code."
                     onChange={(e) => setCode(e.target.value)}
-                    // onChange={(evn) => setCode(evn.target.value)}
                     padding={15}
                     style={{
                       fontSize: 17,

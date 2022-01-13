@@ -13,7 +13,6 @@ const BugItem = ({ bug }) => {
           <h3 className="bugitem-heading">{bug.bugName}</h3>
         </div>
         <div className="bugitem-language-container">
-          {/* <div style={{ width: '5rem' }}> */}
           <div className="bugitem-language-heading-container">
             <h5 className="bugitem-language-heading">Tech💻:</h5>
           </div>
@@ -21,14 +20,12 @@ const BugItem = ({ bug }) => {
         </div>
 
         <div className="bugitem-desc-container">
-          {/* <div style={{ width: '5rem' }}> */}
           <div className="bugitem-desc-heading-container">
             <span className="bugitem-desc-heading">Info📚:</span>
           </div>
           <p className="bugitem-desc">{bug.desc}</p>
         </div>
         <div className="bugitem-links-container">
-          {/* <div style={{ width: '5rem' }}> */}
           <div className="bugitem-links-heading-container">
             <span className="bugitem-links-span">Links🔗:</span>
           </div>
