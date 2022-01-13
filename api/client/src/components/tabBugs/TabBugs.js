@@ -71,6 +71,7 @@ const TabBugs = () => {
           </div>
         </div>
       </div>
+      
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}

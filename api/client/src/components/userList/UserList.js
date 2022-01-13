@@ -13,17 +13,7 @@ const UserList = () => {
     dispatch(bugsDetails());
   }, [dispatch]);
 
-  // const rows = [
-  //   { id: 1, age: 35 },
-  //   { id: 2, age: 42 },
-  //   { id: 3, age: 45 },
-  //   { id: 4, age: 16 },
-  //   { id: 5, age: null },
-  //   { id: 6, age: 150 },
-  //   { id: 7, age: 44 },
-  //   { id: 8, age: 36 },
-  //   { id: 9, age: 65 },
-  // ];
+  // console.log(allBugs)
 
   let rows = [];
   rows = allBugs.map((bug, i) => {
@@ -41,11 +31,11 @@ const UserList = () => {
       headerName: 'Bugs',
       width: 220,
     },
-    {
-      field: 'bugName',
-      headerName: 'Bug Name',
-      width: 220,
-    },
+    // {
+    //   field: 'bugName',
+    //   headerName: 'Bug Name',
+    //   width: 220,
+    // },
     {
       field: 'language',
       headerName: 'Language',

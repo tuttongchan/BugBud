@@ -152,6 +152,7 @@ const TabSingleBug = ({ productId }) => {
               />
             </>
           )}
+          
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}

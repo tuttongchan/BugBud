@@ -11,11 +11,11 @@ import CodeEditor from '@uiw/react-textarea-code-editor';
 const TabHome = () => {
   const dispatch = useDispatch();
   const allBugs = useSelector((state) => state.bugsDetails.bugs || []);
-  const { loading, error } = allBugs;
+  // const { loading, error } = allBugs;
 
-  const [code, setCode] = React.useState(
-    `function add(a, b) {\n  return a + b;\n}`
-  );
+  // const [code, setCode] = React.useState(
+  //   `function add(a, b) {\n  return a + b;\n}`
+  // );
 
   useEffect(() => {
     dispatch(bugsDetails());
@@ -103,7 +103,6 @@ const TabHome = () => {
               <div className="notification-right-spans-container">
                 <span className="notification-span-blue">React Bugs</span>
                 <span className="notification-span-black">
-                  {/* Completed this month */}
                 </span>
               </div>
               <div className="notification-arrow-container">
@@ -119,7 +118,6 @@ const TabHome = () => {
               <div className="notification-right-spans-container">
                 <span className="notification-span-red">Redux Bugs</span>
                 <span className="notification-span-black">
-                  {/* Completed this month */}
                 </span>
               </div>
               <div className="notification-arrow-container">
@@ -135,7 +133,6 @@ const TabHome = () => {
               <div className="notification-right-spans-container">
                 <span className="notification-span-blue">Express Bugs</span>
                 <span className="notification-span-black">
-                  {/* Completed this month */}
                 </span>
               </div>
               <div className="notification-arrow-container">
@@ -151,7 +148,6 @@ const TabHome = () => {
               <div className="notification-right-spans-container">
                 <span className="notification-span-red">MongoDB Bugs</span>
                 <span className="notification-span-black">
-                  {/* Completed this month */}
                 </span>
               </div>
               <div className="notification-arrow-container">
@@ -185,21 +181,6 @@ const TabHome = () => {
             <BarGraph />
           </div>
         </div>
-
-        {/* <CodeEditor
-          value={code}
-          language="js"
-          placeholder="Please enter JS code."
-          onChange={(evn) => setCode(evn.target.value)}
-          padding={15}
-          style={{
-            // fontSize: 12,
-            fontSize: 16,
-            backgroundColor: '#f5f5f5',
-            fontFamily:
-              'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
-          }}
-        /> */}
       </div>
     </div>
   );
