@@ -6,6 +6,8 @@ import BugsScreen from './screens/BugsScreen/BugsScreen';
 import SingleBugScreen from './screens/SingleBugScreen/SingleBugScreen';
 import ImagesScreen from './screens/ImagesScreen/ImagesScreen';
 import SingleImageScreen from './screens/SingleImageScreen/SingleImageScreen';
+import QuestionsScreen from './screens/QuestionsScreen/QuestionsScreen';
+import SingleQuestionScreen from './screens/SingleQuestionScreen/SingleQuestionScreen';
 
 function App() {
   // const userSignin = useSelector((state) => state.userSignin);
@@ -20,9 +22,12 @@ function App() {
 
           <Route path="/bugs" component={BugsScreen} exact></Route>
           <Route path="/bug/:id" component={SingleBugScreen} exact></Route>
-          
+
           <Route path="/images" component={ImagesScreen} exact></Route>
-          <Route path='/image/:id' component={SingleImageScreen} exact></Route>
+          <Route path="/image/:id" component={SingleImageScreen} exact></Route>
+
+          <Route path="/questions" component={QuestionsScreen} exact></Route>
+          <Route path="/question/:id" component={SingleQuestionScreen} exact></Route>
         </Switch>
       </BrowserRouter>
     </div>

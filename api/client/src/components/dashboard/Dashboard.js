@@ -16,6 +16,9 @@ const Dashboard = () => {
           <Link className="dashboard-list-item" to="/images">
             <li>Images</li>
           </Link>
+          <Link className="dashboard-list-item" to="/questions">
+            <li>Questions</li>
+          </Link>
         </ul>
       </div>
     </div>
