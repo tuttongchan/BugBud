@@ -25,10 +25,10 @@ const TabQuestions = () => {
             height: '70%',
             borderRadius: '5px',
             marginBottom: '2rem',
-            color: 'lightgreen',
+            // color: 'lightgreen',
             fontSize: 16,
-            backgroundColor: '#000',
-            // backgroundColor: '#f5f5f5',
+            // backgroundColor: '#000',
+            backgroundColor: '#f5f5f5',
             fontFamily:
               'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
           }}
