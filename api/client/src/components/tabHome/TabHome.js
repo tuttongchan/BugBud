@@ -6,7 +6,6 @@ import BarGraph from '../barGraph/BarGraph';
 import UserList from '../userList/UserList';
 import { useDispatch, useSelector } from 'react-redux';
 import { bugsDetails } from '../../actions/bugActions';
-import CodeEditor from '@uiw/react-textarea-code-editor';
 
 const TabHome = () => {
   const dispatch = useDispatch();

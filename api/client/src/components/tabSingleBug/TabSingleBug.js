@@ -28,8 +28,8 @@ const TabSingleBug = ({ productId }) => {
   const bugUpdateSingle = useSelector((state) => state.bugUpdate);
   const {
     // First 2
-    loading: loadingUpdate,
-    error: errorUpdate,
+    // loading: loadingUpdate,
+    // error: errorUpdate,
     success: successUpdate,
   } = bugUpdateSingle;
 

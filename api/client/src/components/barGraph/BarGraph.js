@@ -7,7 +7,7 @@ import moment from 'moment';
 const BarGraph = () => {
   const dispatch = useDispatch();
   const allBugs = useSelector((state) => state.bugsDetails.bugs || []);
-  const { loading, error } = allBugs;
+  // const { loading, error } = allBugs;
 
   useEffect(() => {
     dispatch(bugsDetails());
@@ -23,21 +23,21 @@ const BarGraph = () => {
     });
   });
 
-  const september = rows
-    .filter((row) => {
-      return row.createdAt === 'Sep';
-    })
-    .map((item) => {
-      return item.createdAt;
-    });
+  // const september = rows
+  //   .filter((row) => {
+  //     return row.createdAt === 'Sep';
+  //   })
+  //   .map((item) => {
+  //     return item.createdAt;
+  //   });
 
-  const october = rows
-    .filter((row) => {
-      return row.createdAt === 'Oct';
-    })
-    .map((item) => {
-      return item.createdAt;
-    });
+  // const october = rows
+  //   .filter((row) => {
+  //     return row.createdAt === 'Oct';
+  //   })
+  //   .map((item) => {
+  //     return item.createdAt;
+  //   });
 
   const november = rows
     .filter((row) => {

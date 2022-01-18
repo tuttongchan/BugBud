@@ -14,6 +14,10 @@ import {
   imageCreateReducer,
 } from './reducers/imageReducer';
 import {
+  questionCreateReducer,
+  questionsDetailsReducer,
+} from './reducers/questionReducer';
+import {
   userDetailsReducer,
   userRegisterReducer,
   userSigninReducer,
@@ -41,7 +45,9 @@ const reducer = combineReducers({
   imagesDetails: imagesDetailsReducer,
   imageDetails: imageDetailsReducer,
   imageCreate: imageCreateReducer,
-  imageDelete: imageDeleteReducer
+  imageDelete: imageDeleteReducer,
+  questionsDetails: questionsDetailsReducer,
+  questionCreate: questionCreateReducer,
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

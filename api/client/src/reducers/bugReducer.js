@@ -19,19 +19,6 @@ const {
   BUG_UPDATE_RESET,
 } = require('../constants/bugConstants');
 
-// export const bugsDetailsReducer = (state = { bugs: [] }, action) => {
-//   switch (action.type) {
-//     case BUGS_DETAILS_REQUEST:
-//       return { loading: true };
-//     case BUGS_DETAILS_SUCCESS:
-//       return { loading: false, bugs: action.payload };
-//     case BUGS_DETAILS_FAIL:
-//       return { loading: false, error: action.payload };
-//     default:
-//       return state;
-//   }
-// };
-
 export const bugsDetailsReducer = (
   state = { loading: true, bugs: [] },
   action

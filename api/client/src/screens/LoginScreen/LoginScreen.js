@@ -4,14 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { signin } from '../../actions/userActions';
 import TextField from '@mui/material/TextField';
-import LoadingBox from '../../subComponents/loadingBox/LoadingBox';
+// import LoadingBox from '../../subComponents/loadingBox/LoadingBox';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const userSignin = useSelector((state) => state.userSignin);
-  const { loading, error, userInfo } = userSignin;
+  // const { loading, error, userInfo } = userSignin;
+  const { userInfo } = userSignin;
 
   const dispatch = useDispatch();
   const submitHandler = (e) => {

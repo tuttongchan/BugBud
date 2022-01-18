@@ -3,7 +3,8 @@ import './tabbugs.css';
 import BugList from '../bugList/BugList';
 import Modal from 'react-modal';
 import { bugsDetails, createBug } from '../../actions/bugActions';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 
 const TabBugs = () => {
@@ -17,8 +18,8 @@ const TabBugs = () => {
   const [code, setCode] = useState('');
 
   const dispatch = useDispatch();
-  const allBugs = useSelector((state) => state.bugsDetails);
-  const { loading, error, bugs } = allBugs;
+  // const allBugs = useSelector((state) => state.bugsDetails);
+  // const { loading, error, bugs } = allBugs;
 
   useEffect(() => {
     dispatch(bugsDetails());
@@ -127,15 +128,6 @@ const TabBugs = () => {
                     'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
                 }}
               />
-
-              {/* <textarea
-                name="code"
-                id=""
-                cols="30"
-                rows="10"
-                className="modal-code-textarea"
-                onChange={(e) => setCode(e.target.value)}
-              ></textarea> */}
             </div>
             <button type="submit" className="modal-submit-button">
               Add Bug
