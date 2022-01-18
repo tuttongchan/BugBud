@@ -26,7 +26,7 @@ const TabQuestions = () => {
   return (
     <>
       <div className="tabquestions-container">
-        {loading ? (
+        {/* {loading ? (
           <LoadingBox />
         ) : error ? (
           <></>
@@ -34,7 +34,7 @@ const TabQuestions = () => {
           questions.map((item) => {
             console.log(item);
           })
-        )}
+        )} */}
 
         {/* {loading ? (
           <LoadingBox />
