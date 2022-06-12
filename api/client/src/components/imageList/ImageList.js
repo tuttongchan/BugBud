@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { imagesDetails } from '../../actions/imageActions';
 import ImageItem from '../../subComponents/imageItem/ImageItem';
-import LoadingBox from '../../subComponents/loadingBox/LoadingBox';
+// import LoadingBox from '../../subComponents/loadingBox/LoadingBox';
 import './imagelist.css';
 
 const ImageList = ({ search }) => {
@@ -17,7 +17,8 @@ const ImageList = ({ search }) => {
   return (
     <div className="imagelist-container">
       {loading ? (
-        <LoadingBox />
+        // <LoadingBox />
+        <></>
       ) : error ? (
         <></>
       ) : (

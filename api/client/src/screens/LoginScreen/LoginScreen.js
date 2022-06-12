@@ -11,7 +11,6 @@ const LoginScreen = () => {
   const [password, setPassword] = useState('');
 
   const userSignin = useSelector((state) => state.userSignin);
-  // const { loading, error, userInfo } = userSignin;
   const { userInfo } = userSignin;
 
   const dispatch = useDispatch();
@@ -20,10 +19,10 @@ const LoginScreen = () => {
     dispatch(signin(email, password));
   };
 
-  const guestHandler = (e) => {
-    e.preventDefault();
-    dispatch(signin('guest@example.com', '123'));
-  };
+  // const guestHandler = (e) => {
+  //   e.preventDefault();
+  //   dispatch(signin('guest@example.com', '123'));
+  // };
 
   const history = useHistory();
   useEffect(() => {
@@ -61,7 +60,7 @@ const LoginScreen = () => {
             <button onClick={submitHandler} style={{ marginBottom: '.7rem' }}>
               Login
             </button>
-            <button onClick={guestHandler}>Guest</button>
+            {/* <button onClick={guestHandler}>Guest</button> */}
           </div>
         </form>
       </div>
